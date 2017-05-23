@@ -1,0 +1,370 @@
+
+
+
+
+
+NAS Service Registry and Repository | Making Services Visible, Discoverable, and Understandable
+
+@import url("https://nsrr.faa.gov/modules/system/system.base.css?opotd9");
+@import url("https://nsrr.faa.gov/modules/system/system.menus.css?opotd9");
+@import url("https://nsrr.faa.gov/modules/system/system.messages.css?opotd9");
+@import url("https://nsrr.faa.gov/modules/system/system.theme.css?opotd9");
+
+
+@import url("https://nsrr.faa.gov/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.core.min.css?opotd9");
+@import url("https://nsrr.faa.gov/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.theme.min.css?opotd9");
+@import url("https://nsrr.faa.gov/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.button.min.css?opotd9");
+@import url("https://nsrr.faa.gov/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.resizable.min.css?opotd9");
+@import url("https://nsrr.faa.gov/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.dialog.min.css?opotd9");
+
+
+@import url("https://nsrr.faa.gov/modules/book/book.css?opotd9");
+@import url("https://nsrr.faa.gov/modules/comment/comment.css?opotd9");
+@import url("https://nsrr.faa.gov/sites/all/modules/date/date_api/date.css?opotd9");
+@import url("https://nsrr.faa.gov/sites/all/modules/date/date_popup/themes/datepicker.1.7.css?opotd9");
+@import url("https://nsrr.faa.gov/modules/field/theme/field.css?opotd9");
+@import url("https://nsrr.faa.gov/modules/node/node.css?opotd9");
+@import url("https://nsrr.faa.gov/sites/all/modules/examples/render_example/render_example.css?opotd9");
+@import url("https://nsrr.faa.gov/modules/search/search.css?opotd9");
+@import url("https://nsrr.faa.gov/modules/user/user.css?opotd9");
+@import url("https://nsrr.faa.gov/sites/all/modules/workflow/workflow_admin_ui/workflow_admin_ui.css?opotd9");
+@import url("https://nsrr.faa.gov/modules/forum/forum.css?opotd9");
+@import url("https://nsrr.faa.gov/sites/all/modules/views/css/views.css?opotd9");
+
+
+@import url("https://nsrr.faa.gov/sites/all/modules/ctools/css/ctools.css?opotd9");
+@import url("https://nsrr.faa.gov/sites/all/modules/panels/css/panels.css?opotd9");
+@import url("https://nsrr.faa.gov/sites/all/modules/content_type_extras/css/content_type_extras.css?opotd9");
+@import url("https://nsrr.faa.gov/sites/all/modules/advanced_help/help-icon.css?opotd9");
+@import url("https://nsrr.faa.gov/sites/all/libraries/superfish/css/superfish.css?opotd9");
+@import url("https://nsrr.faa.gov/sites/all/libraries/superfish/css/superfish-navbar.css?opotd9");
+
+
+@import url("https://nsrr.faa.gov/sites/all/themes/nsrr_ar/css/font-awesome.css?opotd9");
+@import url("https://nsrr.faa.gov/sites/all/themes/nsrr_ar/css/style.css?opotd9");
+@import url("https://nsrr.faa.gov/sites/all/themes/nsrr_ar/css/media.css?opotd9");
+@import url("https://nsrr.faa.gov/sites/all/themes/alpha_responsive_theme/css/caistyles.css?opotd9");
+@import url("https://nsrr.faa.gov/sites/all/themes/nsrr_ar/css/superfish-horizontal.css?opotd9");
+@import url("https://nsrr.faa.gov/sites/all/themes/nsrr_ar/css/superfish-vertical.css?opotd9");
+@import url("https://nsrr.faa.gov/sites/all/themes/nsrr_ar/css/mystyles.css?opotd9");
+
+
+
+&lt;!--//--&gt;&lt;![CDATA[//&gt;&lt;!--
+window.jQuery || document.write("&lt;script src='/sites/all/modules/jquery_update/replace/jquery/1.7/jquery.min.js'&gt;\x3C/script&gt;")
+//--&gt;&lt;!]]&gt;
+
+
+
+
+
+&lt;!--//--&gt;&lt;![CDATA[//&gt;&lt;!--
+window.jQuery.ui || document.write("&lt;script src='/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery-ui.min.js'&gt;\x3C/script&gt;")
+//--&gt;&lt;!]]&gt;
+
+
+
+
+
+
+&lt;!--//--&gt;&lt;![CDATA[//&gt;&lt;!--
+jQuery(document).ready(function () { 
+ 
+//alert("Hello!");
+jQuery("#menu-3349-1, #menu-3370-2").click(function(){
+	var myWindow=window.open("", "NSRR Help", "width=500,height=500,resizable=1");
+	myWindow.document.getElementsByTagName("body")[0].innerHTML = "";
+	myWindow.document.write("&lt;p&gt;&lt;style&gt;body {background-image: url(\"../../sites/all/themes/nsrr_ar/images/body-bg.png\");} h1,h2,h5 {color: #0b6aa5; text-align: center; font-family:\"Arial\",sans-serif;}&lt;/style&gt;&lt;h1&gt;&lt;br&gt;NAS Service Registry/Repository (NSRR)&lt;/h1&gt;&lt;h2&gt;Version 2.1&lt;/h2&gt;&lt;h2&gt;&lt;img src=\"../../sites/default/files/FAA%20logo%20small.png\" alt=\"FAA Logo\" style=\"width:100px;height:100px\"&gt;&lt;/h2&gt;&lt;h5&gt;The NSRR database and its user interface are the property of the U.S. Department of Transportation, Federal Aviation Administration, System Wide Information Management Program.&lt;/h5&gt;&lt;/p&gt;");
+	return false;
+	});
+ });
+//--&gt;&lt;!]]&gt;
+
+
+&lt;!--//--&gt;&lt;![CDATA[//&gt;&lt;!--
+jQuery(document).ready(function () { 
+ 
+//alert("Hello!");
+jQuery("#menu-7639-1, #menu-7640-2").click(function(){
+	//alert("clicked");
+	window.open("/admin/help/ah/nsrr_help?popup=1", "advanced_help_window", "width=500,height=900,scrollbars=1,resizable=1");
+	return false;
+	});
+ });
+//--&gt;&lt;!]]&gt;
+
+
+
+
+&lt;!--//--&gt;&lt;![CDATA[//&gt;&lt;!--
+      // close script tag for SecKit protection
+      //--&gt;&lt;!]]&gt;
+      
+      
+      
+      <link type="text/css" rel="stylesheet" id="seckit-clickjacking-noscript-tag" media="all" href="/sites/all/modules/seckit/css/seckit.noscript_tag.css" />
+      <div id="seckit-noscript-tag">
+        <h1>Sorry, you need to enable JavaScript to visit this website.</h1>
+      </div>
+      
+      
+      &lt;!--//--&gt;&lt;![CDATA[//&gt;&lt;!--
+      // open script tag to avoid syntax errors
+//--&gt;&lt;!]]&gt;
+
+
+
+
+
+
+
+
+
+&lt;!--//--&gt;&lt;![CDATA[//&gt;&lt;!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"nsrr_ar","theme_token":"k6PZSLjik6hbEGyA07QNWx33yi-ENWGSfE0zWZXI5T0","jquery_version":"1.7","js":{"\/\/code.jquery.com\/jquery-1.7.2.min.js":1,"0":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"\/\/code.jquery.com\/ui\/1.10.2\/jquery-ui.min.js":1,"1":1,"misc\/ajax.js":1,"sites\/all\/modules\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/button_field\/js\/button_field.ajax.js":1,"sites\/all\/modules\/nsrr_help\/js\/nsrr_help.js":1,"2":1,"3":1,"misc\/progress.js":1,"sites\/all\/modules\/autologout\/autologout.js":1,"4":1,"sites\/all\/libraries\/superfish\/jquery.hoverIntent.minified.js":1,"sites\/all\/libraries\/superfish\/sfsmallscreen.js":1,"sites\/all\/libraries\/superfish\/supposition.js":1,"sites\/all\/libraries\/superfish\/superfish.js":1,"sites\/all\/libraries\/superfish\/supersubs.js":1,"sites\/all\/modules\/superfish\/superfish.js":1,"sites\/all\/themes\/nsrr_ar\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.button.css":1,"misc\/ui\/jquery.ui.resizable.css":1,"misc\/ui\/jquery.ui.dialog.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/examples\/render_example\/render_example.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/workflow\/workflow_admin_ui\/workflow_admin_ui.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/panels\/css\/panels.css":1,"sites\/all\/modules\/content_type_extras\/css\/content_type_extras.css":1,"sites\/all\/modules\/advanced_help\/help-icon.css":1,"sites\/all\/libraries\/superfish\/css\/superfish.css":1,"sites\/all\/libraries\/superfish\/css\/superfish-navbar.css":1,"sites\/all\/themes\/nsrr_ar\/css\/font-awesome.css":1,"sites\/all\/themes\/nsrr_ar\/css\/style.css":1,"sites\/all\/themes\/nsrr_ar\/css\/media.css":1,"sites\/all\/themes\/alpha_responsive_theme\/css\/caistyles.css":1,"sites\/all\/themes\/nsrr_ar\/css\/superfish-horizontal.css":1,"sites\/all\/themes\/nsrr_ar\/css\/superfish-vertical.css":1,"sites\/all\/themes\/nsrr_ar\/css\/mystyles.css":1,"sites\/all\/themes\/nsrr_arcss\/under_review_styles.css":1}},"autologout":{"timeout":1800000,"timeout_padding":10000,"message":"Your session is about to expire. Do you want to reset it?","redirect_url":"\/?destination=node\/2661\/profile\u0026autologout_timeout=1","title":"NAS Service Registry and Repository Alert","refresh_only":false,"no_dialog":1,"use_alt_logout_method":0},"better_exposed_filters":{"views":{"lifecycle_state_header":{"displays":{"default":{"filters":[]}}},"service_summary":{"displays":{"page_1":{"filters":[]}}},"service_title_for_nav_menu":{"displays":{"block_1":{"filters":[]}}}}},"superfish":{"2":{"id":"2","sf":{"pathClass":"active-trail","animation":{"opacity":"show","height":"show"},"speed":"\u0027fast\u0027","autoArrows":false,"dropShadows":true,"disableHI":false},"plugins":{"smallscreen":{"mode":"window_width","addSelected":false,"menuClasses":false,"hyperlinkClasses":false,"title":"User Menu Service Detail"},"supposition":true,"bgiframe":false,"supersubs":{"minWidth":"12","maxWidth":"27","extraWidth":1}}}}});
+//--&gt;&lt;!]]&gt;
+
+
+
+
+    
+
+
+
+
+  
+    
+  
+
+      
+  
+    HomeServicesManage NotificationsPrint Service DescriptionSearchSearch ServicesSearch DocumentsHelpHelp IndexContact UsAboutLog Out  
+  
+ 
+
+ 
+  
+
+
+
+  
+    Navigation
+    
+          
+    
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+              
+          
+        
+      
+      
+        NAS Service Registry and Repository
+        Making Services Visible, Discoverable, and Understandable
+      
+    
+
+    
+          
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+   
+
+
+  
+    
+      
+        
+
+                      
+              You are hereHome » Services » Service Profile            
+          
+          
+          
+            
+
+                                                                                                
+            
+      
+        
+  
+  
+      
+        
+      
+          Lifecycle Stage:  Verification    
+    
+  
+  
+  
+  
+  
+  
+
+Help 
+
+    
+  
+  
+  
+      
+        
+      
+              
+      Service Name:     Acknowledge Weather Report (WMSCR)    
+      Service Description:     This document describes one of the Weather Message Switching Center Replacement (WMSCR) SWIM services. This service allows an external entity to submit a receipt acknowledgement from clients and stores the information in the database. The acknowledge report service is an optional step that the client may perform after receiving a report distribution. This document was prepared in accordance with FAA-STD-065A [1].
+The WMSCR system is operated by the Federal Aviation Agency (FAA) and is used to acquire and disseminate weather and Notice to Airmen (NOTAM) information to a variety of end users over a national communication network. The system operates two geographically separated nodes in Salt Lake City and Atlanta.  The WMSCR platform runs 24 hours a day/seven days a week and is monitored by the FAA staff at both facilities.
+ 
+As part of the System Wide Information Management (SWIM) initiative, the FAA deploys SOA‑based services using a subset of data that is already managed on the current WMSCR platform. The WMSCR system stores and distributes Automated Weather Observation System (AWOS) Data Acquisition System (ADAS) and Automated Surface Observation System (ASOS) data. ADAS produces METAR report which created based on the One Minute Observation (OMO) data. WMSCR SWIM services are authoritative source for PIREP and Altimeter Setting information. The Altimeter data is extracted from the METAR report and is a part of the OMO.
+.
+The current WMSCR platform provides capabilities to accept, store, disassemble, reassemble, schedule, deliver, and archive a wide variety of textual weather and NOTAM messages.  WMSCR SWIM based services enable request/response and publish/subscribe message exchange patterns to disseminate PIREP ((Pilot Weather Report) and Altimeter data. These services are available for use by other FAA‑approved client systems and/or applications using SOA technologies
+The WMSCR SOA Component adds SWIM‑complaint COTS software, specifically the FUSE product suite, to enable interactions with clients using HTTP, JMS, and XML.  The required processing for WMSCR SWIM allows clients to submit reports that are stored in the database and to retrieve reports from the database.
+ 
+WMSCR SWIM also allows clients to subscribe to report distributions using JMS. Clients, who have been listed as subscribers, can connect with the NEMS, using the JAVA Message Service (JMS), to retrieve the PIREPS and Altimeter Setting information published to it by the WMSCR SWIM FEP.  The external messaging for WMSCR SWIM uses OGC GML standards, a subset of the WXXM schema for message formatting, and data definitions from the urn:us:gov:dot:faa:weather:iesp:nwrx:1.0 namespace
+The SWIM-enabled Weather WMSCR PIREP and Altimeter Settings publication went operational in June 2012. As of September 20, 2012, the NextGen Integration and Evaluation Capability (NIEC) are receiving both altimeter and PIREP publications.
+PIREPs, reports of historical and near real time weather conditions encountered by an aircraft in flight, are an important ingredient in weather impact advisories. Capture of crucial pilot observations and distribution of these to other NAS users by WMSCR via the SWIM service will significantly enhance NAS safety. SWIM greatly increases the scope of coverage of the pilot reported weather product.
+    
+      GRID:     http://nsrr.faa.gov/services/wmscr-ack-weather-rpt    
+      Service Version:     1.0    
+      ATM Service Category:     Flight Planning, Arrival and Departure, En Route Cruise/Oceanic    
+      SWIM Service Product Category:     Weather    
+      Service Interface Type:     Method-Oriented    
+      Messaging Model:     Point-to-Point    
+      Service Criticality Level:     Essential    
+    
+  
+  
+  
+  
+  
+  
+           
+        
+      
+                  
+            
+  
+
+      
+  
+    
+        
+  
+  
+      
+        
+      
+          Acknowledge Weather Report (WMSCR)    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+
+
+      
+  
+    Service ProfileService Background
+Service ProviderPoints of Contact
+
+Service Consumers
+Service Functionality
+Security
+Qualities of Service
+Service Policies
+Environmental Constraints
+
+Service InterfaceOperations
+Messages
+Faults
+Data
+
+Service ImplementationEnd Points
+Bindings
+
+Service Documents
+Service References
+  
+  
+ 
+
+ 
+            
+              
+        
+
+        
+            
+  
+
+  
+
+  
+    
+       
+        
+                    
+  
+
+      
+  
+    U.S. Department of Transportation Federal Aviation Administration 800 Independence Avenue, SW Washington, DC 20591 1-866-TELL-FAA (1-866-835-5322) This is a Federal Aviation Administration (FAA) protected computer system. All FAA systems, including all related equipment, networks, and network devices (e.g., including Internet access) are provided for the processing of official United States (U.S.) Government information.  Intentionally accessing a protected Government computer without authorization or in excess of authority and as a result causing damage, recklessly or otherwise, will constitute a violation of Title 18, United States Code, Section 1030, Computer Fraud and Abuse Act (CFAA), and may be referred to the Federal Bureau of Investigation (FBI) for investigation and prosecution. Violations of the CFAA can lead to both civil and criminal liability, including seeking monetary relief for economic damage. The FAA will monitor usage for violations of public laws, national information security policies, and agency policy. The FAA will intercept, record, audit, read, copy, and disclose by and to authorized personnel for official purposes, including administrative, civil, and/or criminal investigations. Access or use of this computer system by any person, whether authorized or unauthorized, constitutes consent and monitoring to these terms for violation of Federal laws, national security policy, and agency computer policy. If you are not an authorized user of this system or do not consent to monitoring, exit this system now.
+  
+  
+ 
+
+ 
+
+                                                
+          
+  
+
+
+
+  
+    
+          
+    
+      
+        Copyright © 2017, NAS Service Registry and Repository  
+       Designed by  Zymphonies
+      
+    
+  
+
+  
+
+
+
+  

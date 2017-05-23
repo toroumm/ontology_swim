@@ -22,11 +22,6 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
-visitadas = {}
-lista_geral = []
-rede = {}
-
-
 ################################################################################################
 
 def clear_atm(category):
@@ -198,8 +193,8 @@ driver.get('https://eur-registry.swim.aero/user/login')
 username = driver.find_element_by_id("edit-name")
 password = driver.find_element_by_id("edit-pass")
 
-username.send_keys("camilacb@icea.gov.br")
-password.send_keys("Camil@01")
+username.send_keys("usuario.gov.br")
+password.send_keys("senha")
 
 driver.find_element_by_id("edit-submit").click()
 
