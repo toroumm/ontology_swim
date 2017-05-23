@@ -38,42 +38,43 @@ def get_atm(tree):
 
 	data = {}
 
-	# 	
+	# Activity Category
 	try:
-		x = tree.xpath('//div/div[1]/div/div/div[2]/div/text()')
+		x = tree.xpath('//div[contains(@class,"field-name-field-atm-activity-category")]/div/descendant::*/text()')
+		
 
-		data['actCategory'] = clear_atm(x)
+		data['actCategory'] = x
 	except:
 		data['actCategory'] = None		
 		print 'except','ATM activity category'
 
 	#ATM data category
 	try:
-		x = tree.xpath('//div/div[3]/div/div/div[2]/div/text()')
-	
-		data['dataCategory'] = clear_atm(x)
+		x = tree.xpath('//div[contains(@class,"field-name-field-atm-data-category")]/div/descendant::*/text()') 
+
+		data['dataCategory'] = x
 
 	except:
 		data['dataCategory'] = None
 		print 'except', 'ATM data category'
 
-	#Atm stakeholders Precisa afunilar tem a consulta xtree (tem que retirar 'Ready for consumption')
+	#Atm stakeholders 
 	try:
 
-		x = tree.xpath('//div/div[5]/div/div/div[2]/div/text()')
-	
-		data['dataStakeholder'] = clear_atm(x[1:])
+		x = tree.xpath('//div[contains(@class,"field-name-field-atm-stakeholders")]/div/descendant::*/text()')
+
+
+		data['dataStakeholder'] = x
 	except:
 		data['dataStakeholder'] = None
 		print 'except', 'Atm stakeholders'
 
-	#atm regions Também precisa afunilar (tem que retirar 'Current and Supported')
+	#atm regions 
 	
 	try:
 
-		x = tree.xpath('//div/div[7]/div/div/div[2]/div/text()')
-
-		data['regions'] = clear_atm(x[1:])
+		x = tree.xpath('//div[contains(@class,"field-name-field-regions")]/div/descendant::*/text()')
+		data['regions'] = x
 
 	except:
 		data['regions'] = None
@@ -82,9 +83,9 @@ def get_atm(tree):
 	#atm flight phases
 	
 	try:
-		x = tree.xpath('//div/div[9]/div/div/div[2]/div/text()')
+		x = tree.xpath('//div[contains(@class,"field-name-field-flight-phases")]/div/descendant::*/text()')
 
-		data['flightPhases'] = clear_atm(x)
+		data['flightPhases'] = x
 	except:
 		data['flightPhases'] = None
 		print 'Except','atm flight phases'
@@ -100,7 +101,7 @@ def get_header(tree):
 
 	try:
 
-		name = tree.xpath('//*[@id="content"]/div/div[1]/h1/text()')
+		name = tree.xpath('//div[contains(@class,"page-header")]/h1/text()') #tree.xpath('//*[@id="content"]/div/div[1]/h1/text()')
 
 		name = [i.replace('\t','') for i in name]
 
@@ -152,8 +153,8 @@ def get_registrationProcess(tree):
 	#Service Description
 	try:
 	
-		serviceDescription = tree.xpath('//div/div[@class="pane-content"]/p/text()')
-
+		serviceDescription = tree.xpath('//div[@id="rmjs-1"]/descendant::*/text()')
+		
 		data['serviceDescription'] = serviceDescription
 	except:
 		data['serviceDescription'] = None
@@ -161,40 +162,28 @@ def get_registrationProcess(tree):
 
 	# Service Tecnical Interface
 	try:
-		serviceTecnicalInterface = tree.xpath('//div/div/div/div/div[3]/div/div[1]/div/div[2]/div/div/div/div[3]/div/div/div/div/div/div[2]/div/span[1]/span/a/text()')
-
-		data['serviceTecnicalInterface'] = serviceTecnicalInterface[0]
+		serviceTecnicalInterface = tree.xpath('//*[@id="block-system-main"]/div/div/div/div[3]/div/div[2]/div/div[1]/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/descendant::*/text()')
+		
+		data['serviceTecnicalInterface'] = serviceTecnicalInterface
 	except:
 		data['serviceTecnicalInterface'] = None
 		print 'Except', 'Service Tecnical Interface'
 	
-
-	# Service Tecnical Interface 
-	try:	
-		sti_description1 = tree.xpath('//div/div/div/div/div[3]/div/div[2]/div/div[1]/div/div/div/div[3]/div/div/div/div/div/div[2]/div/span/span/a/text()')
-
-		sti_description2 = tree.xpath('//div/div/div/div/div[3]/div/div[2]/div/div[1]/div/div/div/div[3]/div/div/div/div/div/div[2]/div/div/span/text()')
-		
-		data['serviceTecnicalInterface'] = sti_description1[0] +':'+ sti_description2[0]	
-	except:
-		data['serviceTecnicalInterface'] = None
-		print 'Except', 'Service Tecnical Interface '
-
 	return data
 ################################################################################################
 
 baseurl  ='https://eur-registry.swim.aero'
 
 
-driver  = webdriver.Firefox()
+driver  = webdriver.Chrome('/usr/local/share/chromedriver')
 
 driver.get('https://eur-registry.swim.aero/user/login')
 
 username = driver.find_element_by_id("edit-name")
 password = driver.find_element_by_id("edit-pass")
 
-username.send_keys("usuario.gov.br")
-password.send_keys("senha")
+username.send_keys("camilacb@icea.gov.br")
+password.send_keys("Camil@01")
 
 driver.find_element_by_id("edit-submit").click()
 
