@@ -70,7 +70,6 @@ def get_atm(tree):
 		print 'except', 'Atm stakeholders'
 
 	#atm regions 
-	
 	try:
 
 		x = tree.xpath('//div[contains(@class,"field-name-field-regions")]/div/descendant::*/text()')
@@ -81,7 +80,6 @@ def get_atm(tree):
 		print 'Except','Regioes'  
 
 	#atm flight phases
-	
 	try:
 		x = tree.xpath('//div[contains(@class,"field-name-field-flight-phases")]/div/descendant::*/text()')
 
@@ -101,16 +99,12 @@ def get_header(tree):
 
 	try:
 
-		name = tree.xpath('//div[contains(@class,"page-header")]/h1/text()') #tree.xpath('//*[@id="content"]/div/div[1]/h1/text()')
-
+		name = tree.xpath('//div[contains(@class,"page-header")]/h1/text()') 
 		name = [i.replace('\t','') for i in name]
-
 		data['nameService'] = clear_atm(name)[0]
 
 		per_describe = tree.xpath('//div[@class="percent-complete"]/text()')
-
 		data['percentPrescribe'] =  per_describe[0]
-
 		
 	except:
 		data['percentPrescribe'] = None
@@ -125,17 +119,12 @@ def get_header(tree):
 		implementStatus = tree.xpath('//*[@id="block-system-main"]/div/div/div/div[1]/div/div[2]/div/div[1]/div/div/div/div[5]/div/div/div[2]/div/text()')
 
 		data['implementStatus'] = implementStatus[0]
-
-		
-
 	except:
 		print 'Exception', 'VERSAO Servico'
 		data['implementStatus'] = None
 
 	try:
-
 		versionCategory  = tree.xpath('//*[@id="block-system-main"]/div/div/div/div[1]/div/div[2]/div/div[1]/div/div/div/div[7]/div/div/div[2]/div/text()')
-
 		data['versionCategory'] = versionCategory[0]
 
 	except:
@@ -174,7 +163,6 @@ def get_registrationProcess(tree):
 
 baseurl  ='https://eur-registry.swim.aero'
 
-
 driver  = webdriver.Chrome('/usr/local/share/chromedriver')
 
 driver.get('https://eur-registry.swim.aero/user/login')
@@ -182,8 +170,8 @@ driver.get('https://eur-registry.swim.aero/user/login')
 username = driver.find_element_by_id("edit-name")
 password = driver.find_element_by_id("edit-pass")
 
-username.send_keys("camilacb@icea.gov.br")
-password.send_keys("Camil@01")
+username.send_keys("coloque o usuario")
+password.send_keys("senha")
 
 driver.find_element_by_id("edit-submit").click()
 

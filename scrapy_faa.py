@@ -115,6 +115,7 @@ def get_provider_name(tree,driver):
 
 			break
 	return data
+
 #################################################################################
 
 def get_security(tree,driver):		
@@ -257,7 +258,7 @@ driver.get(base_url)
 username = driver.find_element_by_id('edit-name')
 password = driver.find_element_by_id('edit-pass')
 
-username.send_keys('.gov.br')
+username.send_keys('coloque o usuario')
 
 password.send_keys('coloque a senha')
 
