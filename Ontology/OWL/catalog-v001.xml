@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1495732442661" name="http://test.org/service_faa_onto.owl" uri="service_faa_onto.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1495732442661" name="http://test.org/service_onto.owl" uri="service_onto.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1496145887175" name="http://test.org/service_euro.owl" uri="service_euro.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1496145887175" name="http://test.org/service_faa_onto.owl" uri="service_faa_onto.owl"/>
     </group>
 </catalog>

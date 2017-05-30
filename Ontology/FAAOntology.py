@@ -34,17 +34,55 @@ class Provider(Service):
     ontology = onto
 
 #Creating Properties
-class has_for_implementationDescrition(Property):
+class hasServiceCategory(Property):
+    ontology = onto
+    domain = [Service]
+    range = [ServiceCategory]
+
+class hasServiceCriticalLevel(Property):
+    ontology = onto
+    domain = [Service]
+    range = [ServiceCriticalLevel]
+
+class hasAtmServiceCategory(Property):
+    ontology = onto
+    domain = [Service]
+    range = [AtmServiceCategory]
+
+
+class hasMessagingMode(Property):
+    ontology = onto
+    domain = [Service]
+    range = [MessagingMode]
+
+class hasLifeCicleStage(Property):
+    ontology = onto
+    domain = [Service]
+    range = [LifeCicleStage]
+
+class hasInterfaceType(Property):
+    ontology = onto
+    domain = [Service]
+    range = [InterfaceType]
+
+class hasProvider(Property):
+    ontology = onto
+    domain = [Service]
+    range = [Provider]
+
+
+#Creating Data Properties
+class implementationDescrition(Property):
     ontology = onto
     domain = [Service]
     range = [str]
 
-class has_for_implementationName(Property):
+class implementationName(Property):
     ontology = onto
     domain = [Service]
     range = [str]
 
-class has_for_securityDescription(Property):
+class securityDescription(Property):
     ontology = onto
     domain = [Service]
     range = [str]
@@ -149,13 +187,13 @@ for i in range(0, len(parsed_json.keys())):
     if len(implementationDescrition) > 0 :
         implementationDescrition = implementationDescrition[0]
 
-    newService.has_for_implementationDescrition = [implementationDescrition]
+    newService.implementationDescrition = [implementationDescrition]
 
     implementationName = parsed_json[str(i)]["implementation"]["implementationName"]
     if len(implementationName) > 0:
         implementationName = implementationName[0]
 
-    newService.has_for_implementationName = [implementationName]
+    newService.implementationName = [implementationName]
 
     #Header
     serviceCategory = parsed_json[str(i)]["header"]["serviceCategory"]
@@ -166,7 +204,8 @@ for i in range(0, len(parsed_json.keys())):
         for x in range(0,len(serviceCategory)):
             for y in range(0,len(serviceCategoryClasses)):
                 if str(serviceCategoryClasses[y]) == serviceCategory[x]:
-                    newService.is_a.append(serviceCategoryClasses[y])
+                    newService.is_a.append(restriction("hasServiceCategory", SOME,serviceCategoryClasses[y]))
+                    # newService.is_a.append(serviceCategoryClasses[y])
                     break
 
     serviceCriticalLevel = parsed_json[str(i)]["header"]["serviceCriticalLevel"]
@@ -174,7 +213,8 @@ for i in range(0, len(parsed_json.keys())):
         for x in range(0,len(serviceCriticalLevel)):
             for y in range(0,len(serviceCriticalLevelClasses)):
                 if str(serviceCriticalLevelClasses[y]) == serviceCriticalLevel[x]:
-                    newService.is_a.append(serviceCriticalLevelClasses[y])
+                    newService.is_a.append(restriction("hasServiceCriticalLevel", SOME, serviceCriticalLevelClasses[y]))
+                    # newService.is_a.append(serviceCriticalLevelClasses[y])
                     break
 
     atmServiceCategory = parsed_json[str(i)]["header"]["atmServiceCategory"]
@@ -185,7 +225,8 @@ for i in range(0, len(parsed_json.keys())):
         for x in range(0,len(atmServiceCategory)):
             for y in range(0,len(atmServiceCategoryClasses)):
                 if str(atmServiceCategoryClasses[y]) == atmServiceCategory[x]:
-                    newService.is_a.append(atmServiceCategoryClasses[y])
+                    newService.is_a.append(restriction("hasAtmServiceCategory", SOME, atmServiceCategoryClasses[y]))
+                    # newService.is_a.append(atmServiceCategoryClasses[y])
                     break
 
     messagingMode = parsed_json[str(i)]["header"]["messagingMode"]
@@ -193,7 +234,8 @@ for i in range(0, len(parsed_json.keys())):
         for x in range(0,len(messagingMode)):
             for y in range(0,len(messagingModeClasses)):
                 if str(messagingModeClasses[y]) == messagingMode[x]:
-                    newService.is_a.append(messagingModeClasses[y])
+                    newService.is_a.append(restriction("hasMessagingMode", SOME, messagingModeClasses[y]))
+                    # newService.is_a.append(messagingModeClasses[y])
                     break
 
     lifeCicleStage = parsed_json[str(i)]["header"]["lifeCicleStage"]
@@ -201,7 +243,8 @@ for i in range(0, len(parsed_json.keys())):
         for x in range(0, len(lifeCicleStage)):
             for y in range(0, len(lifeCicleStageClasses)):
                 if str(lifeCicleStageClasses[y]) == lifeCicleStage[x]:
-                    newService.is_a.append(lifeCicleStageClasses[y])
+                    newService.is_a.append(restriction("hasLifeCicleStage", SOME, lifeCicleStageClasses[y]))
+                    # newService.is_a.append(lifeCicleStageClasses[y])
                     break
 
     serviceVersion = parsed_json[str(i)]["header"]["serviceVersion"]
@@ -211,7 +254,8 @@ for i in range(0, len(parsed_json.keys())):
         for x in range(0, len(interfaceType)):
             for y in range(0, len(interfaceTypeClasses)):
                 if str(interfaceTypeClasses[y]) == interfaceType[x]:
-                    newService.is_a.append(interfaceTypeClasses[y])
+                    newService.is_a.append(restriction("hasInterfaceType", SOME, interfaceTypeClasses[y]))
+                    # newService.is_a.append(interfaceTypeClasses[y])
                     break
 
     serviceDescription = parsed_json[str(i)]["header"]["serviceDescription"]
@@ -225,7 +269,7 @@ for i in range(0, len(parsed_json.keys())):
     if len(securityDescription) > 0:
         securityDescription = securityDescription[0]
 
-    newService.has_for_securityDescription = [securityDescription]
+    newService.securityDescription = [securityDescription]
 
     #Provider
     serviceProviderName = parsed_json[str(i)]["provider"]["serviceProviderName"]
@@ -236,7 +280,8 @@ for i in range(0, len(parsed_json.keys())):
         for x in range(0, len(serviceProviderName)):
             for y in range(0, len(serviceProviderNameClasses)):
                 if str(serviceProviderNameClasses[y]) == serviceProviderName[x]:
-                    newService.is_a.append(serviceProviderNameClasses[y])
+                    newService.is_a.append(restriction("hasProvider", SOME, serviceProviderNameClasses[y]))
+                    # newService.is_a.append(serviceProviderNameClasses[y])
                     break
 
 

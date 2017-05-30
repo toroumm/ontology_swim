@@ -1,10 +1,10 @@
+from cgitb import reset
+
 from owlready import *
 import json, sys, types
 
 onto_path.append("OWL/")
-
 onto = Ontology("http://test.org/service_euro.owl")
-
 
 class Service(Thing):
     ontology = onto
@@ -27,9 +27,36 @@ class ATM_StakeHolders(Service):
 
 
 class Regions(Service):
-    pass
+    ontology = onto
 
-#Creating Properties
+#Creating Object Properties
+class hasATMDataCategory(Property):
+    ontology = onto
+    domain = [Service]
+    range = [ATM_Data_Category]
+
+class hasATMActivityCategory(Property):
+    ontology = onto
+    domain = [Service]
+    range = [ATM_Activity_Category]
+
+class hasATMFlightPhases(Property):
+    ontology = onto
+    domain = [Service]
+    range = [ATM_Flight_Phases]
+
+class hasATMStakeHolders(Property):
+    ontology = onto
+    domain = [Service]
+    range = [ATM_StakeHolders]
+
+class hasRegions(FunctionalProperty):
+     ontology = onto
+     # domain = [Service]
+     range = [Regions]
+
+
+#Creating Data Properties
 class has_for_version(Property):
     ontology = onto
     domain = [Service]
@@ -128,7 +155,7 @@ for i in range(0, len(parsed_json.keys())):
         for x in range(0, len(region)):
             for y in range(0,len(regionClasses)):
                 if str(regionClasses[y]) == region[x]:
-                    newService.is_a.append(regionClasses[y])
+                    newService.is_a.append(restriction("hasRegions", SOME, regionClasses[y]))
                     break
 
     flightPhase = parsed_json[str(i)]["atm"]["flightPhases"]
@@ -136,7 +163,8 @@ for i in range(0, len(parsed_json.keys())):
         for x in range(0, len(flightPhase)):
             for y in range(0,len(flightPhaseClasses)):
                 if str(flightPhaseClasses[y]) == flightPhase[x]:
-                    newService.is_a.append(flightPhaseClasses[y])
+                    newService.is_a.append(restriction("hasATMFlightPhases",SOME ,flightPhaseClasses[y]))
+                    # newService.is_a.append(flightPhaseClasses[y])
                     break
 
     dataStakeHolder = parsed_json[str(i)]["atm"]["dataStakeholder"]
@@ -144,7 +172,8 @@ for i in range(0, len(parsed_json.keys())):
         for x in range(0, len(dataStakeHolder)):
             for y in range(0,len(dataStakeholderClasses)):
                 if str(dataStakeholderClasses[y]) == dataStakeHolder[x]:
-                    newService.is_a.append(dataStakeholderClasses[y])
+                    newService.is_a.append(restriction("hasATMStakeHolders",SOME,dataStakeholderClasses[y] ))
+                    # newService.is_a.append(dataStakeholderClasses[y])
                     break
 
     dataCategory = parsed_json[str(i)]["atm"]["dataCategory"]
@@ -152,15 +181,17 @@ for i in range(0, len(parsed_json.keys())):
         for x in range(0, len(dataCategory)):
             for y in range(0,len(dataCategoryClasses)):
                 if str(dataCategoryClasses[y]) == dataCategory[x]:
-                    newService.is_a.append(dataCategoryClasses[y])
+                    newService.is_a.append(restriction("hasATMDataCategory",SOME,dataCategoryClasses[y]))
+                    # newService.is_a.append(dataCategoryClasses[y])
                     break
 
     actCategory = parsed_json[str(i)]["atm"]["actCategory"]
     if len(actCategory) > 0:
         for x in range(0, len(actCategory)):
             for y in range(0,len(actCategoryClasses)):
-                if str(actCategoryClasses[y]) == actCategory[x]:
-                    newService.is_a.append(actCategoryClasses[y])
+                if str(actCategoryClasses[y]) == actCategory[x].replace(" ",""):
+                    newService.is_a.append(restriction("hasATMActivityCategory",SOME,actCategoryClasses[y]))
+                    # newService.is_a.append(actCategoryClasses[y])
                     break
 
 
@@ -187,4 +218,7 @@ for i in range(0, len(parsed_json.keys())):
 
 
 onto.save()
+onto.sync_reasoner()
+
+# print(to_owl(onto))
 
