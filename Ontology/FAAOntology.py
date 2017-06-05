@@ -198,12 +198,14 @@ for i in range(0, len(parsed_json.keys())):
     #Header
     serviceCategory = parsed_json[str(i)]["header"]["serviceCategory"]
     if len(serviceCategory) > 0:
+
         if len(serviceCategory) == 1:
             serviceCategory = serviceCategory[0].split(',')
 
         for x in range(0,len(serviceCategory)):
+
             for y in range(0,len(serviceCategoryClasses)):
-                if str(serviceCategoryClasses[y]) == serviceCategory[x]:
+                if str(serviceCategoryClasses[y]) == serviceCategory[x].replace(" ",""):
                     newService.is_a.append(restriction("hasServiceCategory", SOME,serviceCategoryClasses[y]))
                     # newService.is_a.append(serviceCategoryClasses[y])
                     break
@@ -212,7 +214,7 @@ for i in range(0, len(parsed_json.keys())):
     if len(serviceCriticalLevel) > 0:
         for x in range(0,len(serviceCriticalLevel)):
             for y in range(0,len(serviceCriticalLevelClasses)):
-                if str(serviceCriticalLevelClasses[y]) == serviceCriticalLevel[x]:
+                if str(serviceCriticalLevelClasses[y]) == serviceCriticalLevel[x].replace(" ",""):
                     newService.is_a.append(restriction("hasServiceCriticalLevel", SOME, serviceCriticalLevelClasses[y]))
                     # newService.is_a.append(serviceCriticalLevelClasses[y])
                     break
@@ -224,7 +226,7 @@ for i in range(0, len(parsed_json.keys())):
 
         for x in range(0,len(atmServiceCategory)):
             for y in range(0,len(atmServiceCategoryClasses)):
-                if str(atmServiceCategoryClasses[y]) == atmServiceCategory[x]:
+                if str(atmServiceCategoryClasses[y]) == atmServiceCategory[x].replace(" ",""):
                     newService.is_a.append(restriction("hasAtmServiceCategory", SOME, atmServiceCategoryClasses[y]))
                     # newService.is_a.append(atmServiceCategoryClasses[y])
                     break
@@ -233,7 +235,7 @@ for i in range(0, len(parsed_json.keys())):
     if len(messagingMode) > 0:
         for x in range(0,len(messagingMode)):
             for y in range(0,len(messagingModeClasses)):
-                if str(messagingModeClasses[y]) == messagingMode[x]:
+                if str(messagingModeClasses[y]) == messagingMode[x].replace(" ",""):
                     newService.is_a.append(restriction("hasMessagingMode", SOME, messagingModeClasses[y]))
                     # newService.is_a.append(messagingModeClasses[y])
                     break
@@ -242,7 +244,7 @@ for i in range(0, len(parsed_json.keys())):
     if len(lifeCicleStage) > 0:
         for x in range(0, len(lifeCicleStage)):
             for y in range(0, len(lifeCicleStageClasses)):
-                if str(lifeCicleStageClasses[y]) == lifeCicleStage[x]:
+                if str(lifeCicleStageClasses[y]) == lifeCicleStage[x].replace(" ",""):
                     newService.is_a.append(restriction("hasLifeCicleStage", SOME, lifeCicleStageClasses[y]))
                     # newService.is_a.append(lifeCicleStageClasses[y])
                     break
@@ -253,7 +255,7 @@ for i in range(0, len(parsed_json.keys())):
     if len(interfaceType) > 0:
         for x in range(0, len(interfaceType)):
             for y in range(0, len(interfaceTypeClasses)):
-                if str(interfaceTypeClasses[y]) == interfaceType[x]:
+                if str(interfaceTypeClasses[y]) == interfaceType[x].replace(" ",""):
                     newService.is_a.append(restriction("hasInterfaceType", SOME, interfaceTypeClasses[y]))
                     # newService.is_a.append(interfaceTypeClasses[y])
                     break
@@ -279,7 +281,7 @@ for i in range(0, len(parsed_json.keys())):
 
         for x in range(0, len(serviceProviderName)):
             for y in range(0, len(serviceProviderNameClasses)):
-                if str(serviceProviderNameClasses[y]) == serviceProviderName[x]:
+                if str(serviceProviderNameClasses[y]) == serviceProviderName[x].replace(" ",""):
                     newService.is_a.append(restriction("hasProvider", SOME, serviceProviderNameClasses[y]))
                     # newService.is_a.append(serviceProviderNameClasses[y])
                     break

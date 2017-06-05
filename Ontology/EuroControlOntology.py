@@ -4,7 +4,7 @@ from owlready import *
 import json, sys, types
 
 onto_path.append("OWL/")
-onto = Ontology("http://test.org/service_euro.owl")
+onto = Ontology("http://service_euro.owl")
 
 class Service(Thing):
     ontology = onto
@@ -50,7 +50,7 @@ class hasATMStakeHolders(Property):
     domain = [Service]
     range = [ATM_StakeHolders]
 
-class hasRegions(FunctionalProperty):
+class hasRegions(Property):
      ontology = onto
      # domain = [Service]
      range = [Regions]
@@ -154,7 +154,7 @@ for i in range(0, len(parsed_json.keys())):
     if len(region) > 0:
         for x in range(0, len(region)):
             for y in range(0,len(regionClasses)):
-                if str(regionClasses[y]) == region[x]:
+                if str(regionClasses[y]) == region[x].replace(" ", ""):
                     newService.is_a.append(restriction("hasRegions", SOME, regionClasses[y]))
                     break
 
@@ -162,7 +162,7 @@ for i in range(0, len(parsed_json.keys())):
     if len(flightPhase) > 0:
         for x in range(0, len(flightPhase)):
             for y in range(0,len(flightPhaseClasses)):
-                if str(flightPhaseClasses[y]) == flightPhase[x]:
+                if str(flightPhaseClasses[y]) == flightPhase[x].replace(" ", ""):
                     newService.is_a.append(restriction("hasATMFlightPhases",SOME ,flightPhaseClasses[y]))
                     # newService.is_a.append(flightPhaseClasses[y])
                     break
@@ -171,7 +171,7 @@ for i in range(0, len(parsed_json.keys())):
     if len(dataStakeHolder) > 0:
         for x in range(0, len(dataStakeHolder)):
             for y in range(0,len(dataStakeholderClasses)):
-                if str(dataStakeholderClasses[y]) == dataStakeHolder[x]:
+                if str(dataStakeholderClasses[y]) == dataStakeHolder[x].replace(" ", ""):
                     newService.is_a.append(restriction("hasATMStakeHolders",SOME,dataStakeholderClasses[y] ))
                     # newService.is_a.append(dataStakeholderClasses[y])
                     break
@@ -180,7 +180,7 @@ for i in range(0, len(parsed_json.keys())):
     if len(dataCategory) > 0:
         for x in range(0, len(dataCategory)):
             for y in range(0,len(dataCategoryClasses)):
-                if str(dataCategoryClasses[y]) == dataCategory[x]:
+                if str(dataCategoryClasses[y]) == dataCategory[x].replace(" ", ""):
                     newService.is_a.append(restriction("hasATMDataCategory",SOME,dataCategoryClasses[y]))
                     # newService.is_a.append(dataCategoryClasses[y])
                     break
