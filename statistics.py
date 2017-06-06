@@ -24,13 +24,23 @@ def getItemList(_dict, key):
 			control = False
 			for ddd in _dict[d][dd]:
 				#print ddd, key
-				if  key == ddd and len(_dict[d][dd][ddd]) > 0:
-					x = set(_list)
-					y = set(_dict[d][dd][ddd])
+				ok = False
+				if type(_dict[d][dd][ddd]) is list:
+					if len(_dict[d][dd][ddd]):
+						ok = True
+				else:
+					if(_dict[d][dd][ddd] is not None):
+						ok = True
+				if  key == ddd and ok:
+					if type(_dict[d][dd][ddd]) is list:
+						x = set(_list)
+						y = set(_dict[d][dd][ddd])
 
-					k = y - x
+						k = y - x
 
-					_list = _list + list(k)
+						_list = _list + list(k)
+					elif type(_dict[d][dd][ddd]) is not list and _dict[d][dd][ddd] not in _list :
+						_list.append(_dict[d][dd][ddd])
 					control = True
 					break
 			if(control):
@@ -38,7 +48,7 @@ def getItemList(_dict, key):
 	return _list
 #*****************************************************************************
 '''
-Retorn uma matrix com a intercção de duas chaves
+Retorna uma matrix com a intercção de duas chaves
 
 strL1 = key1
 
@@ -77,9 +87,48 @@ def getTableStatistic(strL1, strL2, _dict, path_to_save):
 #*****************************************************************************
 
 '''
+get statistics
+
+Retorna um vetor com a contagem de cada chave por serviço
+
+strL1 = key1
+
+_dict = json ontologia
 
 '''
+def getListStatistics(strL1, _dict, path_to_save):
 
+	_list = getItemList(_dict,strL1)
+
+	arr = np.zeros((1,len(_list)))
+
+	for d in _dict:
+		for dd in _dict[d]:
+			for ddd in _dict[d][dd]:
+				a = None
+
+				if ddd == strL1:
+
+					ok = False
+					if type(_dict[d][dd][ddd]) is list:
+						if len(_dict[d][dd][ddd]):
+							ok = True
+					else:
+						if (_dict[d][dd][ddd] is not None):
+							ok = True
+					if ok:
+						if len(_dict[d][dd][ddd]) > 0 and type(_dict[d][dd][ddd]) is list:
+							a = [_list.index(x) for x in _dict[d][dd][ddd]]
+						elif _dict[d][dd][ddd] is not None and ok and type(_dict[d][dd][ddd]) is not list:
+							a = _list.index(_dict[d][dd][ddd])
+				if a is not None:
+					arr[0,a] +=1
+
+	df = pandas.DataFrame(arr, columns=_list)
+
+	df.to_csv(path_to_save + strL1+'.csv')
+
+	return arr
 
 #*****************************************************************************
 
@@ -99,31 +148,5 @@ getTableStatistic('regions','actCategory',onto,path_to_save)
 
 getTableStatistic('actCategory','dataStakeholder',onto,path_to_save)
 
-
-'''
-#regions = getItemList(onto, 'regions')
-
-#dataCategory = getItemList(onto,'dataCategory')
-
-#actCategory = getItemList(onto,'actCategory')
-
-#dataStakeholder = getItemList(onto,'dataStakeholder')
-
-df =  pandas.DataFrame(getTableStatistic('actCategory','dataCategory',onto), columns=dataCategory,index=actCategory)
-
-df.to_csv(path_to_save+'eur-act_and_dataCategory.csv')
-
-de = pandas.DataFrame(getTableStatistic('regions','dataCategory',onto),columns=dataCategory,index=regions)
-
-de.to_csv(path_to_save+'eur-data_and_regions.csv')
-
-dt = pandas.DataFrame(getTableStatistic('regions','actCategory',onto),columns=actCategory,index =regions)
-
-dt.to_csv(path_to_save+'eur-act_and_regions.csv')
-
-dw = pandas.DataFrame(getTableStatistic('actCategory','dataStakeholder',onto),columns=dataStakeholder, index= actCategory)
-
-dw.to_csv(path_to_save+'eur-stakeholder_and_act.csv')
-
-'''
+getListStatistics('implementStatus',onto,path_to_save)
 
