@@ -1,8 +1,10 @@
 
+# coding=utf-8
+
 import numpy as np
 import matplotlib.pyplot as plt
 import os, json, sys
-import csv
+import csv,pandas
 
 #*****************************************************************************
 
@@ -45,7 +47,7 @@ strL2 = key2
 _dict = json ontologia
 
 '''
-def getTableStatistic(strL1, strL2, _dict):
+def getTableStatistic(strL1, strL2, _dict, path_to_save):
 
 	_l1 = getItemList(_dict,strL1)
 
@@ -65,26 +67,63 @@ def getTableStatistic(strL1, strL2, _dict):
 					if len(_dict[d][dd][ddd]) > 0:
 						b = [_l2.index(x) for x in _dict[d][dd][ddd]]
 				arr[a,b] +=1
+
+	df = pandas.DataFrame(arr, columns=_l2,
+						  index=_l1)
+
+	df.to_csv(path_to_save + strL1+'_and_'+strL2+'.csv')
+
 	return arr
 #*****************************************************************************
 
-_file = 'resultado.json'
+'''
+
+'''
+
+
+#*****************************************************************************
+
+_file = 'eurServices.json'
 
 with open(_file) as f:
 	onto = json.load(f)
 
-
-regions = getItemList(onto, 'regions')
-
-dataCategory = getItemList(onto,'dataCategory')
-
-actCategory = getItemList(onto,'actCategory')
-
-print regions
-print dataCategory
-print actCategory
-
-print getTableStatistic('actCategory','dataCategory',onto)
+path_to_save = 'eurControlTables/'
 
 
+getTableStatistic('actCategory','dataCategory',onto,path_to_save)
+
+getTableStatistic('regions','dataCategory',onto,path_to_save)
+
+getTableStatistic('regions','actCategory',onto,path_to_save)
+
+getTableStatistic('actCategory','dataStakeholder',onto,path_to_save)
+
+
+'''
+#regions = getItemList(onto, 'regions')
+
+#dataCategory = getItemList(onto,'dataCategory')
+
+#actCategory = getItemList(onto,'actCategory')
+
+#dataStakeholder = getItemList(onto,'dataStakeholder')
+
+df =  pandas.DataFrame(getTableStatistic('actCategory','dataCategory',onto), columns=dataCategory,index=actCategory)
+
+df.to_csv(path_to_save+'eur-act_and_dataCategory.csv')
+
+de = pandas.DataFrame(getTableStatistic('regions','dataCategory',onto),columns=dataCategory,index=regions)
+
+de.to_csv(path_to_save+'eur-data_and_regions.csv')
+
+dt = pandas.DataFrame(getTableStatistic('regions','actCategory',onto),columns=actCategory,index =regions)
+
+dt.to_csv(path_to_save+'eur-act_and_regions.csv')
+
+dw = pandas.DataFrame(getTableStatistic('actCategory','dataStakeholder',onto),columns=dataStakeholder, index= actCategory)
+
+dw.to_csv(path_to_save+'eur-stakeholder_and_act.csv')
+
+'''
 
