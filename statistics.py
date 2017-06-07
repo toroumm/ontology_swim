@@ -67,8 +67,9 @@ def getTableStatistic(strL1, strL2, _dict, path_to_save):
 
 	for d in _dict:
 		for dd in _dict[d]:
+			a, b = None, None
 			for ddd in _dict[d][dd]:
-				a,b = 1,1
+
 				if ddd == strL1:
 					if len(_dict[d][dd][ddd]) > 0:
 						a = [_l1.index(x) for x in _dict[d][dd][ddd]]
@@ -76,14 +77,38 @@ def getTableStatistic(strL1, strL2, _dict, path_to_save):
 				elif ddd == strL2:
 					if len(_dict[d][dd][ddd]) > 0:
 						b = [_l2.index(x) for x in _dict[d][dd][ddd]]
-				arr[a,b] +=1
 
-	df = pandas.DataFrame(arr, columns=_l2,
-						  index=_l1)
+			try:
+				if type(a) is list and type(b) is list:
+					for ii in a:
+						for jj in b:
+							arr[ii,jj]+=1
+					#arr[a,b] +=1
+			except:
+				print a, b
+				#print arr
+				print 'parou', arr.shape
+				#sys.exit()
+	total_rows = np.sum(arr, axis=1)
+	per_total_rows = total_rows / np.sum(total_rows)
+
+	arr = np.concatenate((arr,total_rows.reshape(total_rows.shape[0],1), per_total_rows.reshape(per_total_rows.shape[0],1)),axis=1)
+
+	total_cols = np.sum(arr, axis=0)
+	per_total_cols = total_cols / np.sum(total_cols)
+
+	arr = np.concatenate(
+		(arr, total_cols.reshape(1,total_cols.shape[0]), per_total_cols.reshape(1,per_total_cols.shape[0])), axis=0)
+
+	_l2 = _l2 + ['Total', '%Total']
+
+	_l1 = _l1 + ['Total', '%Total']
+
+	df = pandas.DataFrame(arr, columns=_l2, index=_l1)
 
 	df.to_csv(path_to_save + strL1+'_and_'+strL2+'.csv')
 
-	return arr
+	return arr,df
 #*****************************************************************************
 
 '''
@@ -128,7 +153,7 @@ def getListStatistics(strL1, _dict, path_to_save):
 
 	df.to_csv(path_to_save + strL1+'.csv')
 
-	return arr
+	return arr,df
 
 #*****************************************************************************
 
@@ -140,6 +165,17 @@ with open(_file) as f:
 path_to_save = 'eurControlTables/'
 
 
+#a,b = getTableStatistic('actCategory','dataCategory',onto,path_to_save)
+
+#t =  b['%Total'][:-2]
+
+#w = b['Total'].values
+
+#t.plot(kind = 'scatter',subplots= True)
+
+#plt.show()
+
+'''
 getTableStatistic('actCategory','dataCategory',onto,path_to_save)
 
 getTableStatistic('regions','dataCategory',onto,path_to_save)
@@ -150,3 +186,8 @@ getTableStatistic('actCategory','dataStakeholder',onto,path_to_save)
 
 getListStatistics('implementStatus',onto,path_to_save)
 
+getListStatistics('regions',onto,path_to_save)
+
+'''
+
+getListStatistics('dataCategory',onto,path_to_save)

@@ -1,28 +1,30 @@
-,Meteorology,Aeronautical Information,Flight,Other,Surveillance,Environment,Capacity Demand and Flow
-Meteorological Information,0.0,20.0,0.0,0.0,0.0,0.0,0.0
-Trajectory Management,26.0,758.0,23.0,5.0,6.0,8.0,6.0
-Airspace And Surface Structure Allocation,0.0,13.0,0.0,0.0,0.0,0.0,0.0
-MET Information Management,0.0,26.0,0.0,0.0,0.0,0.0,0.0
-Airport Management,0.0,23.0,0.0,0.0,0.0,0.0,0.0
-Shared Information Service Management,0.0,6.0,0.0,0.0,0.0,0.0,0.0
-Demand And Capacity Balancing,0.0,9.0,0.0,0.0,0.0,0.0,0.0
-Traffic Synchronisation,0.0,4.0,0.0,0.0,0.0,0.0,0.0
-Separation Provision,0.0,2.0,0.0,0.0,0.0,0.0,0.0
-Trajectory Planning,0.0,11.0,0.0,0.0,0.0,0.0,0.0
-Traffic Sequencing,0.0,3.0,0.0,0.0,0.0,0.0,0.0
-ATM Information Management,0.0,21.0,0.0,0.0,0.0,0.0,0.0
-Airspace Access,0.0,3.0,0.0,0.0,0.0,0.0,0.0
-Flight Information Management,0.0,12.0,0.0,0.0,0.0,0.0,0.0
-Airport CDM,0.0,10.0,0.0,0.0,0.0,0.0,0.0
-Surveillance Infrastructure,0.0,7.0,0.0,0.0,0.0,0.0,0.0
-Trajectory Execution And Conformance Monitoring,0.0,3.0,0.0,0.0,0.0,0.0,0.0
-Airspace  And Surface Structure  Design,0.0,7.0,0.0,0.0,0.0,0.0,0.0
-Aeronautical Information Management,0.0,15.0,0.0,0.0,0.0,0.0,0.0
-Conflict Management,0.0,3.0,0.0,0.0,0.0,0.0,0.0
-ATM Network Management,0.0,7.0,0.0,0.0,0.0,0.0,0.0
-Route Design,0.0,5.0,0.0,0.0,0.0,0.0,0.0
-CNS Infrastructure,0.0,3.0,0.0,0.0,0.0,0.0,0.0
-Navigtion Infrastructure,0.0,2.0,0.0,0.0,0.0,0.0,0.0
-Route Assignment And Guidance,0.0,1.0,0.0,0.0,0.0,0.0,0.0
-Communication Infrastructure,0.0,2.0,0.0,0.0,0.0,0.0,0.0
-Collision Avoidance,0.0,2.0,0.0,0.0,0.0,0.0,0.0
+,Meteorology,Aeronautical Information,Flight,Other,Surveillance,Environment,Capacity Demand and Flow,Total,%Total
+Meteorological Information,19.0,3.0,4.0,1.0,2.0,4.0,2.0,35.0,0.0642201834862
+Trajectory Management,8.0,2.0,1.0,2.0,0.0,0.0,0.0,13.0,0.0238532110092
+Airspace And Surface Structure Allocation,10.0,4.0,3.0,2.0,1.0,2.0,2.0,24.0,0.0440366972477
+MET Information Management,26.0,7.0,5.0,1.0,2.0,5.0,3.0,49.0,0.0899082568807
+Airport Management,15.0,12.0,7.0,3.0,2.0,4.0,5.0,48.0,0.0880733944954
+Shared Information Service Management,3.0,5.0,4.0,1.0,2.0,4.0,2.0,21.0,0.0385321100917
+Demand And Capacity Balancing,5.0,2.0,5.0,1.0,2.0,3.0,6.0,24.0,0.0440366972477
+Traffic Synchronisation,2.0,1.0,2.0,0.0,2.0,1.0,1.0,9.0,0.0165137614679
+Separation Provision,2.0,0.0,1.0,1.0,1.0,1.0,1.0,7.0,0.0128440366972
+Trajectory Planning,6.0,3.0,3.0,2.0,1.0,2.0,1.0,18.0,0.0330275229358
+Traffic Sequencing,2.0,1.0,1.0,0.0,1.0,1.0,1.0,7.0,0.0128440366972
+ATM Information Management,8.0,15.0,12.0,3.0,3.0,7.0,5.0,53.0,0.097247706422
+Airspace Access,1.0,2.0,1.0,1.0,1.0,1.0,1.0,8.0,0.0146788990826
+Flight Information Management,4.0,5.0,11.0,1.0,4.0,7.0,4.0,36.0,0.0660550458716
+Airport CDM,4.0,5.0,7.0,2.0,2.0,5.0,5.0,30.0,0.0550458715596
+Surveillance Infrastructure,2.0,1.0,6.0,1.0,4.0,4.0,3.0,21.0,0.0385321100917
+Trajectory Execution And Conformance Monitoring,1.0,0.0,1.0,1.0,0.0,1.0,0.0,4.0,0.00733944954128
+Airspace  And Surface Structure  Design,3.0,5.0,5.0,3.0,1.0,3.0,2.0,22.0,0.0403669724771
+Aeronautical Information Management,3.0,15.0,5.0,1.0,1.0,3.0,2.0,30.0,0.0550458715596
+Conflict Management,2.0,2.0,2.0,1.0,2.0,2.0,2.0,13.0,0.0238532110092
+ATM Network Management,2.0,3.0,7.0,0.0,1.0,2.0,3.0,18.0,0.0330275229358
+Route Design,2.0,4.0,4.0,2.0,2.0,2.0,2.0,18.0,0.0330275229358
+CNS Infrastructure,1.0,1.0,3.0,0.0,2.0,1.0,2.0,10.0,0.0183486238532
+Navigtion Infrastructure,1.0,0.0,2.0,1.0,1.0,1.0,2.0,8.0,0.0146788990826
+Route Assignment And Guidance,0.0,1.0,1.0,1.0,0.0,0.0,0.0,3.0,0.00550458715596
+Communication Infrastructure,1.0,1.0,2.0,2.0,1.0,1.0,1.0,9.0,0.0165137614679
+Collision Avoidance,1.0,0.0,1.0,2.0,1.0,1.0,1.0,7.0,0.0128440366972
+Total,134.0,100.0,106.0,36.0,42.0,68.0,59.0,545.0,1.0
+%Total,0.122823098075,0.0916590284143,0.0971585701192,0.0329972502291,0.038496791934,0.0623281393217,0.0540788267644,0.499541704858,0.000916590284143

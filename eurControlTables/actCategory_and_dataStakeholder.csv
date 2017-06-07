@@ -1,28 +1,30 @@
-,ANSP,Network Manager,Airspace User,Airport Operator
-Meteorological Information,0.0,20.0,0.0,0.0
-Trajectory Management,40.0,766.0,44.0,31.0
-Airspace And Surface Structure Allocation,0.0,13.0,0.0,0.0
-MET Information Management,0.0,26.0,0.0,0.0
-Airport Management,0.0,23.0,0.0,0.0
-Shared Information Service Management,0.0,6.0,0.0,0.0
-Demand And Capacity Balancing,0.0,9.0,0.0,0.0
-Traffic Synchronisation,0.0,4.0,0.0,0.0
-Separation Provision,0.0,2.0,0.0,0.0
-Trajectory Planning,0.0,11.0,0.0,0.0
-Traffic Sequencing,0.0,3.0,0.0,0.0
-ATM Information Management,0.0,21.0,0.0,0.0
-Airspace Access,0.0,3.0,0.0,0.0
-Flight Information Management,0.0,12.0,0.0,0.0
-Airport CDM,0.0,10.0,0.0,0.0
-Surveillance Infrastructure,0.0,7.0,0.0,0.0
-Trajectory Execution And Conformance Monitoring,0.0,3.0,0.0,0.0
-Airspace  And Surface Structure  Design,0.0,7.0,0.0,0.0
-Aeronautical Information Management,0.0,15.0,0.0,0.0
-Conflict Management,0.0,3.0,0.0,0.0
-ATM Network Management,0.0,7.0,0.0,0.0
-Route Design,0.0,5.0,0.0,0.0
-CNS Infrastructure,0.0,3.0,0.0,0.0
-Navigtion Infrastructure,0.0,2.0,0.0,0.0
-Route Assignment And Guidance,0.0,1.0,0.0,0.0
-Communication Infrastructure,0.0,2.0,0.0,0.0
-Collision Avoidance,0.0,2.0,0.0,0.0
+,ANSP,Network Manager,Airspace User,Airport Operator,Total,%Total
+Meteorological Information,13.0,9.0,15.0,13.0,50.0,0.0809061488673
+Trajectory Management,9.0,6.0,11.0,6.0,32.0,0.0517799352751
+Airspace And Surface Structure Allocation,12.0,8.0,13.0,8.0,41.0,0.0663430420712
+MET Information Management,20.0,9.0,22.0,18.0,69.0,0.111650485437
+Airport Management,15.0,6.0,18.0,18.0,57.0,0.0922330097087
+Shared Information Service Management,5.0,2.0,5.0,3.0,15.0,0.0242718446602
+Demand And Capacity Balancing,7.0,3.0,7.0,4.0,21.0,0.0339805825243
+Traffic Synchronisation,2.0,2.0,2.0,2.0,8.0,0.0129449838188
+Separation Provision,2.0,2.0,2.0,2.0,8.0,0.0129449838188
+Trajectory Planning,7.0,5.0,9.0,6.0,27.0,0.0436893203883
+Traffic Sequencing,2.0,2.0,2.0,2.0,8.0,0.0129449838188
+ATM Information Management,19.0,11.0,18.0,13.0,61.0,0.0987055016181
+Airspace Access,3.0,2.0,3.0,2.0,10.0,0.0161812297735
+Flight Information Management,11.0,6.0,9.0,5.0,31.0,0.0501618122977
+Airport CDM,8.0,2.0,8.0,5.0,23.0,0.037216828479
+Surveillance Infrastructure,5.0,4.0,3.0,2.0,14.0,0.0226537216828
+Trajectory Execution And Conformance Monitoring,2.0,1.0,2.0,1.0,6.0,0.00970873786408
+Airspace  And Surface Structure  Design,7.0,5.0,7.0,5.0,24.0,0.0388349514563
+Aeronautical Information Management,11.0,8.0,13.0,10.0,42.0,0.0679611650485
+Conflict Management,3.0,3.0,3.0,3.0,12.0,0.0194174757282
+ATM Network Management,3.0,3.0,4.0,2.0,12.0,0.0194174757282
+Route Design,5.0,5.0,5.0,5.0,20.0,0.0323624595469
+CNS Infrastructure,1.0,1.0,1.0,1.0,4.0,0.00647249190939
+Navigtion Infrastructure,1.0,1.0,1.0,1.0,4.0,0.00647249190939
+Route Assignment And Guidance,1.0,1.0,1.0,1.0,4.0,0.00647249190939
+Communication Infrastructure,2.0,2.0,2.0,2.0,8.0,0.0129449838188
+Collision Avoidance,2.0,1.0,2.0,2.0,7.0,0.0113268608414
+Total,178.0,110.0,188.0,142.0,618.0,1.0
+%Total,0.143896523848,0.0889248181083,0.151980598222,0.114793856103,0.499595796281,0.000808407437348
