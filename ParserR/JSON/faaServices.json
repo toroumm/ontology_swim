@@ -1,0 +1,4202 @@
+{   "0":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Weather"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Flight Planning, Arrival and Departure, En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Point-to-Point"
+         ],
+         "lifeCicleStage":[
+            "Verification"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Acknowledge Weather Report (WMSCR)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "This document describes one of the Weather Message Switching Center Replacement (WMSCR) SWIM services. This service allows an external entity to submit a receipt acknowledgement from clients and stores the information in the database. The acknowledge report service is an optional step that the client may perform after receiving a report distribution. This document was prepared in accordance with FAA-STD-065A [1].",
+            "The WMSCR system is operated by the Federal Aviation Agency (FAA) and is used to acquire and disseminate weather and Notice to Airmen (NOTAM) information to a variety of end users over a national communication network. The system operates two geographically separated nodes in Salt Lake City and Atlanta.\u00a0 The WMSCR platform runs 24 hours a day/seven days a week and is monitored by the FAA staff at both facilities.",
+            "\u00a0",
+            "As part of the System Wide Information Management (SWIM) initiative, the FAA deploys SOA\u2011based services using a subset of data that is already managed on the current WMSCR platform. The WMSCR system stores and distributes Automated Weather Observation System (AWOS) Data Acquisition System (ADAS) and Automated Surface Observation System (ASOS) data. ADAS produces METAR report which created based on the One Minute Observation (OMO) data. WMSCR SWIM services are authoritative source for PIREP and Altimeter Setting information. The Altimeter data is extracted from the METAR report and is a part of the OMO.",
+            ".",
+            "The current WMSCR platform provides capabilities to accept, store, disassemble, reassemble, schedule, deliver, and archive a wide variety of textual weather and NOTAM messages.\u00a0 WMSCR SWIM based services enable request/response and publish/subscribe message exchange patterns to disseminate PIREP ((Pilot Weather Report) and Altimeter data. These services are available for use by other FAA\u2011approved client systems and/or applications using SOA technologies",
+            "The WMSCR SOA Component adds SWIM\u2011complaint COTS software, specifically the FUSE product suite, to enable interactions with clients using HTTP, JMS, and XML.\u00a0 The required processing for WMSCR SWIM allows clients to submit reports that are stored in the database and to retrieve reports from the database.",
+            "\u00a0",
+            "WMSCR SWIM also allows clients to subscribe to report distributions using JMS. Clients, who have been listed as subscribers, can connect with the NEMS, using the JAVA Message Service (JMS), to retrieve the PIREPS and Altimeter Setting information published to it by the WMSCR SWIM FEP.\u00a0 The external messaging for WMSCR SWIM uses OGC GML standards, a subset of the WXXM schema for message formatting, and data definitions from the urn:us:gov:dot:faa:weather:iesp:nwrx:1.0 namespace",
+            "The SWIM-enabled Weather WMSCR PIREP and Altimeter Settings publication went operational in June 2012. As of September 20, 2012, the NextGen Integration and Evaluation Capability (NIEC) are receiving both altimeter and PIREP publications.",
+            "PIREPs, reports of historical and near real time weather conditions encountered by an aircraft in flight, are an important ingredient in weather impact advisories. Capture of crucial pilot observations and distribution of these to other NAS users by WMSCR via the SWIM service will significantly enhance NAS safety. SWIM greatly increases the scope of coverage of the pilot reported weather product."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "WMSCR Acknowledge Weather Report delegates all security measures to the NEMS. See NEMS ICD for description of security service."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Weather Message Switching Center Replacement"
+         ]
+      }
+   },
+   "1":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Deprecated"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Aeronautical Common Services  Data Query (ACS-DQ) Deprecated"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The ACS Data Query Service allows a service consumer to submit queries and returns Special Use Airspace (SUA), SUA Schedules that match the query."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "This Web Service uses the OASIS Web Service Security (WS-S*) standards, described in the WSS: SOAP Message Security2 document, for authentication of systems and users. This security feature will allow administrators to manage users\u2019 access to certain ACS functionality by assigning them pre-determined security credentials. The ACS does not allow for data modification through user invoked Web Service calls, this was implemented to maintain integrity for the AI. The calls for the Web Service will use the Hypertext Transport Protocol with the SSL/TLS protocol HTTP(S)). This\u00a0Web Service supports both self-signed TLSv1 and SSLv3 certifications. All requests made to the ACS engine will be archived for auditing purposes. These records will be held for a minimum of three years."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management Modernization S2 (AIMM S2)"
+         ]
+      }
+   },
+   "2":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Deprecated"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Aeronautical Common Services  Data Subscription (ACS-DS) Deprecated"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The Aeronautical Common Services \u00a0Data Subscription (ACS-DS) is a WS-Notification (WSN) service, which is a standard that describes a publish/subscribe messaging model implemented over Web Services. The WS-Notification standard is defined by combining the following OASIS specifications: WS-Topics, WS-BaseNotification, and WS-BrokeredNotification. The service allows consumers to subscribe to notifications of updates to aeronautical information. Consumers can use this service to create and manage their subscriptions. The service allows users to create and manage PullPoints, which is a resource used to accumulate notification messages, that can later be retrieved at requested intervals."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "The Service uses the OASIS Web Service Security (WS-S*) standards, described in the WSS: SOAP Message Security2 document, for authentication of systems and users. This security feature will allow administrators to manage users\u2019 access to certain Service functionality by assigning them pre-determined security credentials. The Service does not allow for data modification through user invoked Web Service calls, this was implemented to maintain integrity for the AI. The calls to the\u00a0Service will use the Hypertext Transport Protocol with the SSL/TLS protocol HTTP(S)). The Service supports both self-signed TLSv1 and SSLv3 certifications. All requests made to the Service will be archived for auditing purposes. These records will be held for a minimum of three years.\u00a0"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management Modernization (AIMM)"
+         ]
+      }
+   },
+   "3":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Routine"
+         ],
+         "lifeCicleStage":[
+            "Proposed"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Aeronautical Common Services Airspace Conflict Detection (ACS-ACD)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "Service to ensure that the creation or scheduling of airspace does not conflict with the protected airspace of any currently existing airspace restrictions or reservations. \u00a0"
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "The\u00a0Service\u00a0uses the OASIS Web Service Security (WS-S*) standards, described in the WSS: SOAP Message Security2 document, for authentication of incoming requests. This security feature will allow administrators to manage\u00a0access to the functionality by assigning pre-determined security credentials. The Service does not allow for data modification, this was implemented to maintain integrity for the AI. Requests to the\u00a0Service will use the Hypertext Transport Protocol with the SSL/TLS protocol HTTP(S)). The Service supports both self-signed TLSv1 and SSLv3 certifications. All requests made to the Service engine will be archived for auditing purposes. These records will be held for a minimum of three years.\u00a0"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management Modernization (AIMM)"
+         ]
+      }
+   },
+   "4":{
+      "implementation":{
+         "implementationDescrition":[
+            "This Service is a HTTP and SOAP compliant web-service interface that provides operations for handling AI.",
+            "The Service is FAA SWIM Program compliant.",
+            "The Service Data Service will be hosted in Atlanta, Georgia. The backup of the system will be hosted at the Salt Lake City, Utah. The hardware and its configuration is currently hosted at Atlantic City, NJ Test Center.\u00a0"
+         ],
+         "implementationName":[
+            "ACS BusinessProcess"
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Verification"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Aeronautical Common Services Business Process (ACS-BP) "
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The Aeronautical Common Services Business Process (ACS-BP)\u00a0allows the service consumer to list, create, edit, delete, start and\u00a0stop business rules and\u00a0start ODS Conflict review of business process workflows.\u00a0"
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "The Service uses the OASIS Web Service Security (WS-S*) standards, described in the WSS: SOAP Message Security2 document, for authentication of systems and users. This security feature will allow administrators to manage users\u2019 access to certain Service functionality by assigning them pre-determined security credentials. The Service does not allow for data modification through user invoked Web Service calls, this was implemented to maintain integrity for the AI. The calls to the\u00a0Service will use the Hypertext Transport Protocol with the SSL/TLS protocol HTTP(S)). The Service supports both self-signed TLSv1 and SSLv3 certifications. All requests made to the Service will be archived for auditing purposes. These records will be held for a minimum of three years.\u00a0"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management Modernization (AIMM)"
+         ]
+      }
+   },
+   "5":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Verification"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Aeronautical Common Services Business Rule (ACS-BR)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The Aeronautical Common Services Business Rule (ACS-BR) allows the consumer to review,\u00a0create, edit, delete, and deploy business rules workflow"
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "The system uses the OASIS Web Service Security (WS-S*) standards, described in the WSS: SOAP Message Security2 document, for authentication of systems and users. This security feature will allow administrators to manage users\u2019 access to certain ACS functionality by assigning them pre-determined security credentials. The ACS does not allow for data modification through user invoked Web Service calls, this was implemented to maintain integrity for the AI. The calls for the Web Service will use the Hypertext Transport Protocol with the SSL/TLS protocol HTTP(S)). The Web Service supports both self-signed TLSv1 and SSLv3 certifications. All requests made to the ACS engine will be archived for auditing purposes. These records will be held for a minimum of three years.\u00a0"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management Modernization (AIMM)"
+         ]
+      }
+   },
+   "6":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Definition"
+         ],
+         "serviceVersion":[
+            "2.0"
+         ],
+         "serviceName":[
+            "Aeronautical Common Services Data Query (ACS-DQ) V 2.0"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The ACS Data Query Service allows a service consumer to submit queries and returns Special Use Airspace (SUA), SUA Schedules and NOTAM's\u00a0that match the query."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "This Web Service uses the OASIS Web Service Security (WS-S*) standards, described in the WSS: SOAP Message Security2 document, for authentication of systems and users. This security feature will allow administrators to manage users\u2019 access to certain ACS functionality by assigning them pre-determined security credentials. The ACS does not allow for data modification through user invoked Web Service calls, this was implemented to maintain integrity for the AI. The calls for the Web Service will use the Hypertext Transport Protocol with the SSL/TLS protocol HTTP(S)). This\u00a0Web Service supports both self-signed TLSv1 and SSLv3 certifications. All requests made to the ACS engine will be archived for auditing purposes. These records will be held for a minimum of three years."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management Modernization S2 (AIMM S2)"
+         ]
+      }
+   },
+   "7":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Definition"
+         ],
+         "serviceVersion":[
+            "2.0"
+         ],
+         "serviceName":[
+            "Aeronautical Common Services Data Subscription (ACS-DS) (v2.0)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The Aeronautical Common Services \u00a0Data Subscription (ACS-DS) is a WS-Notification (WSN) service, which is a standard that describes a publish/subscribe messaging model implemented over Web Services. The WS-Notification standard is defined by combining the following OASIS specifications: WS-Topics, WS-BaseNotification, and WS-BrokeredNotification. The service allows consumers to subscribe to notifications of updates to aeronautical information. Consumers can use this service to create and manage their subscriptions. The service allows users to create and manage PullPoints, which is a resource used to accumulate notification messages, that can later be retrieved at requested intervals."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "The Service uses the OASIS Web Service Security (WS-S*) standards, described in the WSS: SOAP Message Security2 document, for authentication of systems and users. This security feature will allow administrators to manage users\u2019 access to certain Service functionality by assigning them pre-determined security credentials. The Service does not allow for data modification through user invoked Web Service calls, this was implemented to maintain integrity for the AI. The calls to the\u00a0Service will use the Hypertext Transport Protocol with the SSL/TLS protocol HTTP(S)). The Service supports both self-signed TLSv1 and SSLv3 certifications. All requests made to the Service will be archived for auditing purposes. These records will be held for a minimum of three years.\u00a0"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management Modernization (AIMM)"
+         ]
+      }
+   },
+   "8":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Definition"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Aeronautical Common Services Data Verification (ACS-DV)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "Web Service for verifying AIXM messages based on predefined rules which include validating Airspace messages as well as verifying whether an aeronautical operation can be performed. The Service provides this information in XML and Aeronautical Information Exchange Model (AIXM) 5.1 format"
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "The\u00a0Service\u00a0uses the OASIS Web Service Security (WS-S*) standards, described in the WSS: SOAP Message Security2 document, for authentication of incoming requests. This security feature will allow administrators to manage\u00a0access to the functionality by assigning pre-determined security credentials. The Service does not allow for data modification, this was implemented to maintain integrity for the AI. Requests to the\u00a0Service will use the Hypertext Transport Protocol with the SSL/TLS protocol HTTP(S)). The Service supports both self-signed TLSv1 and SSLv3 certifications. All requests made to the Service engine will be archived for auditing purposes. These records will be held for a minimum of three years.\u00a0"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management Modernization (AIMM)"
+         ]
+      }
+   },
+   "9":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Definition"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Aeronautical Common Services Geodetic Computation (ACS-GC)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "Provides the functions contained in the CompSys21 geodetic computation software, which is an FAA standard for calculations including Inverse, Forward, Bearing, and Segment Distance. Provides the magnetic declination of a specific point on earth, for a given date, based on data from the National Geodetic Data Center."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "The\u00a0Service\u00a0uses the OASIS Web Service Security (WS-S*) standards, described in the WSS: SOAP Message Security2 document, for authentication of incoming requests. This security feature will allow administrators to manage\u00a0access to the functionality by assigning pre-determined security credentials. The Service does not allow for data modification, this was implemented to maintain integrity for the AI. Requests to the\u00a0Service will use the Hypertext Transport Protocol with the SSL/TLS protocol HTTP(S)). The Service supports both self-signed TLSv1 and SSLv3 certifications. All requests made to the Service engine will be archived for auditing purposes. These records will be held for a minimum of three years.\u00a0"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management Modernization (AIMM)"
+         ]
+      }
+   },
+   "10":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Proposed"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Aeronautical Common Services Notification Consumer "
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "TBD"
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "The\u00a0Service\u00a0uses the OASIS Web Service Security (WS-S*) standards, described in the WSS: SOAP Message Security2 document, for authentication of incoming requests. This security feature will allow administrators to manage\u00a0access to the functionality by assigning pre-determined security credentials. The Service does not allow for data modification, this was implemented to maintain integrity for the AI. Requests to the\u00a0Service will use the Hypertext Transport Protocol with the SSL/TLS protocol HTTP(S)). The Service supports both self-signed TLSv1 and SSLv3 certifications. All requests made to the Service engine will be archived for auditing purposes. These records will be held for a minimum of three years.\u00a0"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management Modernization (AIMM)"
+         ]
+      }
+   },
+   "11":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Definition"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Aeronautical Common Services Post Op Metrics (ACS-POM)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "Web Service for defining and requesting results of metrics that operate on existing Aeronautical Information. A consumer can define metrics and store them for later use. A consumer can run a metric definition and retrieve the results in a format that is chosen by the consumer."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "The system uses the OASIS Web Service Security (WS-S*) standards, described in the WSS: SOAP Message Security2 document, for authentication of systems and users. This security feature will allow administrators to manage users\u2019 access to certain ACS functionality by assigning them pre-determined security credentials. The calls for the web service will use the Hypertext Transport Protocol with the SSL/TLS protocol (HTTPS). The web service supports both self-signed TLSv1 and SSLv3 certifications.\u00a0"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management Modernization (AIMM)"
+         ]
+      }
+   },
+   "12":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Deprecated"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Aeronautical Common Services Web Feature Service (ACS-WFS) Deprecated"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The Aeronautical Common Services Web Feature Service (ACS-WFS) allows a service consumer to submit queries to return aeronautical features (e.g., airports, navaids, obstacles, procedures, and NOTAMs) that match the query. In addition the ACS WFS \u00a0allows the user to create, update, list, and delete stored queries associated\u00a0their user ID.\u00a0"
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "The Service uses the OASIS Web Service Security (WS-S*) standards, described in the WSS: SOAP Message Security2 document, for authentication of systems and users. This security feature will allow administrators to manage users\u2019 access to certain Service functionality by assigning them pre-determined security credentials. The Service does not allow for data modification through user invoked Web Service calls, this was implemented to maintain integrity for the AI. The calls to the\u00a0Service will use the Hypertext Transport Protocol with the SSL/TLS protocol HTTP(S)). The Service supports both self-signed TLSv1 and SSLv3 certifications. All requests made to the Service will be archived for auditing purposes. These records will be held for a minimum of three years.\u00a0"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management Modernization S2 (AIMM S2)"
+         ]
+      }
+   },
+   "13":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Definition"
+         ],
+         "serviceVersion":[
+            "2.0"
+         ],
+         "serviceName":[
+            "Aeronautical Common Services Web Feature Service (ACS-WFS) v2.0"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The Aeronautical Common Services Web Feature Service (ACS-WFS) allows a service consumer to submit queries to return aeronautical features (e.g., airports, navaids, obstacles, procedures, and NOTAMs) that match the query. In addition the ACS WFS \u00a0allows the user to create, update, list, and delete stored queries associated\u00a0their user ID.\u00a0"
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "The Service uses the OASIS Web Service Security (WS-S*) standards, described in the WSS: SOAP Message Security2 document, for authentication of systems and users. This security feature will allow administrators to manage users\u2019 access to certain Service functionality by assigning them pre-determined security credentials. The Service does not allow for data modification through user invoked Web Service calls, this was implemented to maintain integrity for the AI. The calls to the\u00a0Service will use the Hypertext Transport Protocol with the SSL/TLS protocol HTTP(S)). The Service supports both self-signed TLSv1 and SSLv3 certifications. All requests made to the Service will be archived for auditing purposes. These records will be held for a minimum of three years.\u00a0"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management Modernization"
+         ]
+      }
+   },
+   "14":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Routine"
+         ],
+         "lifeCicleStage":[
+            "Definition"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Aeronautical Common Services WMS (ACS-WMS)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "This WMS interface supports the geo-referenced information display capability for the AIMM S2 system.\u00a0 The OGC WMS dynamically produces geo-registered map and chart images from geographic information provided by the ACS (and potentially other sources), along with reference data such as aeronautical charts. The maps from the WMS are provided as layers which can be overlaid and viewed simultaneously."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "The\u00a0Service\u00a0uses the OASIS Web Service Security (WS-S*) standards, described in the WSS: SOAP Message Security2 document, for authentication of incoming requests. This security feature will allow administrators to manage\u00a0access to the functionality by assigning pre-determined security credentials. The Service does not allow for data modification, this was implemented to maintain integrity for the AI. Requests to the\u00a0Service will use the Hypertext Transport Protocol with the SSL/TLS protocol HTTP(S)). The Service supports both self-signed TLSv1 and SSLv3 certifications. All requests made to the Service engine will be archived for auditing purposes. These records will be held for a minimum of three years.\u00a0"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management Modernization (AIMM)"
+         ]
+      }
+   },
+   "15":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Definition"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Aeronautical Common Services WMTS (ACS-WMTS)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "Web Service for requesting digitalized data that can be displayed in a geo-referenced map view that integrates and layers information in a spatial context. The Web Service provides this information in Aeronautical Information Exchange Model (AIXM) 5.1 format allowing consumers to fuse various types of AI together for an integrated display.\u00a0"
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "The\u00a0Service\u00a0uses the OASIS Web Service Security (WS-S*) standards, described in the WSS: SOAP Message Security2 document, for authentication of incoming requests. This security feature will allow administrators to manage\u00a0access to the functionality by assigning pre-determined security credentials. The Service does not allow for data modification, this was implemented to maintain integrity for the AI. Requests to the\u00a0Service will use the Hypertext Transport Protocol with the SSL/TLS protocol HTTP(S)). The Service supports both self-signed TLSv1 and SSLv3 certifications. All requests made to the Service engine will be archived for auditing purposes. These records will be held for a minimum of three years.\u00a0"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management Modernization (AIMM)"
+         ]
+      }
+   },
+   "16":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+            "aixm-wfs"
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+
+         ],
+         "messagingMode":[
+
+         ],
+         "lifeCicleStage":[
+            "Proposed"
+         ],
+         "serviceVersion":[
+
+         ],
+         "serviceName":[
+            "Aeronautical Feature Data"
+         ],
+         "interfaceType":[
+
+         ],
+         "serviceDescription":[
+            "NAVLean in R&D"
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "NAV Lean"
+         ]
+      }
+   },
+   "17":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Airport"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Definition"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Aeronautical Information Authoriative Source Notification Service  (AIASNotificationService)"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "Access to Obstacle change notification requires a subscription and the correct username/password credentials according to the\u00a0JMS API as specified in Section 3.1.1 of NEMS ICD.\u00a0",
+            "The \u00a0Service deploys the following security mechanisms: non-repudiation and audit. Each is described in a separate section below.",
+            "The OAS Data Notification Service delegates the following security mechanisms to the NEMS: authentication, authorization, and integrity. For information on implementation of these security mechaninsms, see the NEMS ICD."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management Modernization (AIMM)"
+         ]
+      }
+   },
+   "18":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Airport"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Definition"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Aeronautical Information Authoritative Source Data Service WFS (AIASDataServiceWFS)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The Obstacle Authoritative Source (OAS)\u00a0will provide single sources to maintain obstacle data . This\u00a0authoritative sources will be integrated into the operational environment through web services and legacy system interfaces to exchange data with key systems.",
+            "Thia authoritative sources will provide web services over the FAA System Wide Information Management (SWIM) infrastructure for external consumers to access the source data.\u00a0",
+            "This\u00a0service\u00a0is implemented based on Open Geospatial Consortium (OGC) standards. SOAP based Web feature services (WFS) will be implemented. The other systems that will be interacting with the NAVLean web services will comply to specifically determined operations in the form of Web Service Definition Language (WSDL) documents using Simple Object Access Protocols (SOAP), which are translated using HTTP (Hypertext Transfer Protocol) , and XML (eXtensive Markup Language) code that is in conjunction with existing Web Service Standards.\u00a0\u00a0"
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "This Service will be accessed thru AIT ESB (Enterprise Service Bus). CA API gateway will provide security and authentication functionality on ESB.\u00a0 This Service will utilize CA API Gateway functionality on ESB for providing aeronautical data to internal FAA clients. External consumers will access services over SWIM.",
+            "The Binary Security token or UserID/Password credentials token over SOAP, is used to authenticate a request for data capture, certification, accessibility, and cancelation functions of the\u00a0AIAS service. Binary secirty tokens utilize Base64Binary encoded code."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management Modernization (AIMM)"
+         ]
+      }
+   },
+   "19":{
+      "implementation":{
+         "implementationDescrition":[
+            "Identifies the entry points for CDDS"
+         ],
+         "implementationName":[
+            "End Point 1"
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Weather"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Flight Planning, Airport, Arrival and Departure, En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Definition"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "CDDS WCS Gridded Weather Products (CIWS WCS)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "Provides the CIWS Gridded Weather Products to users and follows the OGC WCS standard and the OASIS WSN WS-BaseNotification standard.The gridded products include current Continental United States (CONUS) Vertically Integrated Liquid (VIL) Dataset, Forecast CONUS VIL Dataset, Current Echo Tops Dataset, Forecast Echo Tops Dataset and Current CONUS Satellite Dataset."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "This section provides information for the implemented access control mechanism and also provides the security policies followed"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Massachusetts Institute of Technology (MIT) - Lincoln Laboratory (LL)"
+         ]
+      }
+   },
+   "20":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Weather"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning, Airport, Arrival and Departure, En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Development"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "CDDS WFS NonGridded Weather Products (CIWS WFS)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "Provides the CIWS Non-Gridded Weather Products to users and follows the OGC WFS standard and the OASIS WSN WS-BaseNotification standard. The non-gridded products include Growth and Decay Trends, Storm Information \u2013 Echo Tops Tags, Storm Information \u2013 Leading Edges, Storm Information \u2013 Motion Vectors, Forecast Standard-Mode VIL Contours, Forecast Winter-Mode VIL Contours, Forecast Echo Tops Contours, Echo Tops Forecast Accuracy Scores, Standard-Mode VIL Forecast Accuracy Scores and Winter-Mode VIL Forecast Accuracy Scores."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "This section provides information for the implemented access control mechanism and also provides the security policies followed."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Massachusetts Institute of Technology (MIT) - Lincoln Laboratory (LL) "
+         ]
+      }
+   },
+   "21":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Operation and Maintenance"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "NAS Management"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Development"
+         ],
+         "serviceVersion":[
+            "1"
+         ],
+         "serviceName":[
+            "Credentialing and Rating Service"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "This service provides information on the Airway Transportation System Specialists\u00a0in regards to their credential and rating authority and the rating expiration date information."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "NEMS manages all security features for Publish/Subscribe services for authorized NAS and non-NAS consumers and NAS producers."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Air Traffic Safety Oversight Service (AOV)"
+         ]
+      }
+   },
+   "22":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Weather"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning, Airport, Arrival and Departure, En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Proposed"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "CSS-Wx Web Coverage Service (WCS)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "The ",
+            " service utilizes basic HTTP ",
+            " over Secure Socket Layer (SSL) to pass the identity of ",
+            ".\u00a0 The WCS-I integrates with a Lightweight Directory Access Protocol (LDAP) server to provide a centralized repository of users for authentication and ",
+            "."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "FAA ATO, AJM-333, CSS-Wx NextGen Weather Systems"
+         ]
+      }
+   },
+   "23":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Weather"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning, Airport, Arrival and Departure, En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Proposed"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "CSS-Wx Web Feature Service (WFS) "
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "FAAATO, AJM-333, CSS-Wx NextGen Weather Systems"
+         ]
+      }
+   },
+   "24":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+            "CSS-Wx WMS-I"
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Weather"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning, Airport, Arrival and Departure, En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Proposed"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "CSS-Wx Web Map Service (WMS) "
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "FAA ATO, AJM-333, CSS-Wx NextGen Weather Systems "
+         ]
+      }
+   },
+   "25":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Weather"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning, Airport, Arrival and Departure, En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Proposed"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "CSS-Wx Web Mapping Tile Service (WMTS) "
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The CSS-Wx System will enable National Airspace System (NAS) systems to access high resolution, aviation weather data to meet their individual needs and to support NAS operations.\u00a0 The weather data will include atmospheric observations and data obtained from a variety of\u00a0producing systems. The CSS-Wx System will filter the weather data as required to meet the specific needs of individual consumer systems.\u00a0 The CSS-Wx System will be the single source for aviation weather data for the FAA and will publish the weather data in standardized formats to consumers via the System Wide Information Management (SWIM) System. The CSS-Wx System will also publish weather data in standardized formats for NAS users who are external to the FAA.",
+            "The WMTS provides access to layer weather data products that have binary data encodings. \u00a0The service includes support for a variety of spatial and temporal filtering and caching functions to allow for flexible and efficient distribution of weather data within the NAS, as well as grid transformation services such as capabilities to distribute data in tiled subsets further increasing network efficiency.\u00a0 The WMTS supports the request/reply message exchange pattern in a consistent manner to meet use cases related to ad-hoc requests for information."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "FAA ATO, AJM-333, CSS-Wx NextGen Weather Systems "
+         ]
+      }
+   },
+   "26":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Flight"
+         ],
+         "serviceCriticalLevel":[
+            "Routine"
+         ],
+         "atmServiceCategory":[
+            "Arrival and Departure, En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Proposed"
+         ],
+         "serviceVersion":[
+
+         ],
+         "serviceName":[
+            "Data Link Dispatch (DLD) Service "
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "The service provides a copy of the data link messages that are exchanged between the aircraft and the NAS automation system (e.g. a copy of en route dispatch messages, formerly EDM, to AOC). The Data Link Dispatch Service sends XML formatted Air Traffic Services (ATS) Facility Notification (AFN), Controller-Pilot Data Link Communications (CPDLC), and Technical (TECH) Notifications messages to service consumers."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "FAA Data Communications Network Service (DCNS) Program"
+         ]
+      }
+   },
+   "27":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Operation and Maintenance"
+         ],
+         "serviceCriticalLevel":[
+            "Routine"
+         ],
+         "atmServiceCategory":[
+            "NAS Management"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Verification"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "DCNS Status Message"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "The DCNS Status Message Service provides status information, using the Java Message Service (JMS), on ground stations, service volumes, parrot service volumes, SDS, and the SOMS subsystems that comprise DCNS."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "The DCNS Status Message Service is deployed in the \u201cuntrusted\u201d region and is fully dependent upon the ",
+            " for access control to verify the identity of the users."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Data Communications Program Office (AJM-34) "
+         ]
+      }
+   },
+   "28":{
+      "implementation":{
+         "implementationDescrition":[
+            "The NASRStaticAI WS is a ",
+            " compliant Web Service interface that provides operations for retrieving resource information from ",
+            ".\u00a0",
+            "The NASRStaticAI WS will be hosted with all other ",
+            " applications in the mission support network of the ",
+            " Enterprise Security Gateway (",
+            ") at the Mike Monroney Aeronautical Center in Oklahoma City. The backup/disaster recovery site will be available at the William J. Hughes Technical Center in Atlantic City."
+         ],
+         "implementationName":[
+            "The NASRStaticAI WS is a SOAP compliant Web Service interface that provides operations for retrieving resource information from NASR.  "
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Definition"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Electronic National Airspace System Resources Get Web Services (NASRStaticAI)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The NASRStaticAI Web Service is a Web Service interface for retrieving resource information from the\u00a0National Airspace System Resources (NASR)",
+            "The aeronautical information pertains to the following: Airports, Air Route Traffic Control Centers (ARTCCs), ASOS/AWOS, Flight Service Stations (FSS), Instrument Landing Systems (ILS), Microwave Landing Systems (MLS), Navigation Aids (NAVAIDs), Tower /TRACON, VOR Receiver Checkpoints, Weather Reporting Stations (WXL), Airways, ARTCC Boundaries, Airspace Fixes, Departure Procedures (DP), Holding Patterns (HP), Instrument Approach Procedures (IAP), Militrary Training Routes (MTR), Parachute Jump Areas (PJA), Prefered Routes (PFR), Standard Terminal Arrival Routes (STAR), Special Activity Airspace (SAA), and Minimum Instrument Altitude (MIA)/Minimum Vectoring Altitude (MVA).\u00a0 And, the real-time aviation activities include those activities that reference such information."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "Access to all operations supported by this service\u00a0require a valid user account and password. User credentials to the service are provided in the ",
+            " header following the ",
+            " WS-",
+            " core specification 1.1. In additional all data transmission between the client and the NASRStaticAI WS are encrypted through ",
+            "."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Program Management Organization (PMO)"
+         ]
+      }
+   },
+   "29":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Deprecated"
+         ],
+         "serviceVersion":[
+            "1.2.9.1"
+         ],
+         "serviceName":[
+            "En Route Airspace Data Publication (SFDPS) (Deprecated)"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "The En Route Airspace Data Publication service publishes route, sector, altimeter setting, and special activities airspace information. Data published are derived completely from Common Message Set (CMS) messages received by SWIM Flight Data Publication Service (SFDPS) from the Host Air Traffic Managment (ATM) Data Distribution System\u00a0(HADDS) at each of the 20 Contiguous United States (CONUS) Air Route Traffic Control Centers (ARTCCs). The source of the data received by HADDS is the En Route Automation Modernization (ERAM) at the ARTCC.",
+            "This service currently publishes messages only in\u00a0Airspace Information Exchange Model (AIXM) format \u00a0to the NAS Enterprise Messaging Service (NEMS), which in turn\u00a0delivers those messages to subscribers.\u00a0Consumers\u00a0can choose to receive all messages or a subset\u00a0of messages.",
+            "Note: the\u00a0En Route Airspace\u00a0Data Query service is the web service corresponding to this publication service."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "Authentication,\u00a0Authorization, and NAS Boundary Protection"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "SWIM Flight Data Publication Service (SFDPS) (AJM-316)"
+         ]
+      }
+   },
+   "30":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Production"
+         ],
+         "serviceVersion":[
+            "2.0"
+         ],
+         "serviceName":[
+            "En Route Airspace Data Publication - v2.0 (SFDPS)"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "This service was formerly referred to as \"En Route Airspace Data Publication - v1.3.0\". The version number was changed to adhere to governance standards.",
+            "The En Route Airspace Data Publication service publishes route, sector, altimeter setting, and special activities airspace information. Data published are derived completely from Common Message Set (CMS) messages received by SWIM Flight Data Publication Service (SFDPS) from the Host Air Traffic Managment (ATM) Data Distribution System\u00a0(HADDS) at each of the 20 Contiguous United States (CONUS) Air Route Traffic Control Centers (ARTCCs). The source of the data received by HADDS is the En Route Automation Modernization (ERAM) at the ARTCC.",
+            "This service publishes messages\u00a0in Simple XML (a custom SFDPS format) and Airspace Information Exchange Model (AIXM) formats to the NAS Enterprise Messaging Service (NEMS), which in turn\u00a0delivers those messages to subscribers.\u00a0Consumers\u00a0can choose to receive all messages or a subset\u00a0of messages.",
+            "Note: the\u00a0En Route Airspace\u00a0Data Query service is the web service corresponding to this publication service."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "Authentication,\u00a0Authorization, and NAS Boundary Protection"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "SWIM Flight Data Publication Service (SFDPS) (AJM-316)"
+         ]
+      }
+   },
+   "31":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Deprecated"
+         ],
+         "serviceVersion":[
+            "1.2.9.1"
+         ],
+         "serviceName":[
+            "En Route Airspace Data Query (SFDPS)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The En Route Airspace Data Publication web service (referred to as the En Route Airspace Data Query service in this catalog) accepts requests from consumers for current and historical en route airspace data in the System Wide Information Management (SWIM) Flight Data Publication Service (SFDPS). SFDPS maintains the most recent 15 days\u2019 worth of data received from ERAM via HADDS. This web service retrieves this data from the SFDPS database based on filtering criteria specified by consumers in the request, and publishes the resultant data to the consumer. Consumers receive results on a JMS topic assigned to them during the NEMS on-ramping process. The filtering criteria consumers can specify in requests are specified in the SFDPS Web Service Description Document (WSDD). Consumers may use this service to retrieve ad-hoc airspace data or to reconstitute their airspace data as and when necessary. Messages are published in an XML format conforming to the 'Simple XML' schema.",
+            "Note: the\u00a0En Route Airspace Data Publication Service is the publication service corresponding to this query service."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "NEMS handles identification and authentication of SFDPS consumers. SFDPS and NEMS, together, are responsible for data authorization."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "SWIM Flight Data Publication Service (SFDPS) (AJM-316)"
+         ]
+      }
+   },
+   "32":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Production"
+         ],
+         "serviceVersion":[
+            "2.0"
+         ],
+         "serviceName":[
+            "En Route Airspace Data Query - v2.0 (SFDPS)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "This service was formerly referred to as \"En Route Airspace Data Query- v1.3.0\". The version number was changed to adhere to governance standards.",
+            "The En Route Airspace Data Publication web service (referred to as the En Route Airspace Data Query service in this catalog) accepts requests from consumers for current and historical en route airspace data in the System Wide Information Management (SWIM) Flight Data Publication Service (SFDPS). SFDPS maintains the most recent 15 days\u2019 worth of data received from ERAM via HADDS. This web service retrieves this data from the SFDPS database based on filtering criteria specified by consumers in the request, and publishes the resultant data to the consumer. Consumers receive results on a JMS topic assigned to them during the NEMS on-ramping process. The filtering criteria consumers can specify in requests are specified in the SFDPS Web Service Description Document (WSDD). Consumers may use this service to retrieve ad-hoc airspace data or to reconstitute their airspace data as and when necessary. Messages are published in an XML format conforming to the 'Simple XML' schema.",
+            "Note: the\u00a0En Route Airspace Data Publication Service is the publication service corresponding to this query service."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "NEMS handles identification and authentication of SFDPS consumers. SFDPS and NEMS, together, are responsible for data authorization."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "SWIM Flight Data Publication Service (SFDPS) (AJM-316)"
+         ]
+      }
+   },
+   "33":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Flight"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Deprecated"
+         ],
+         "serviceVersion":[
+            "1.2.9.1"
+         ],
+         "serviceName":[
+            "En Route Flight Data Publication (SFDPS)"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "The En Route Flight Data Publication Service publishes flight plan, track, and other flight-related messages. Data published are derived completely from Common Message Set (CMS) messages received by SWIM Flight Data Publication Service (SFDPS) from the Host Air Traffic Managment (ATM) Data Distribution System (HADDS) at each of the Contiguous United States (CONUS) Air Route Traffic Control Centers (ARTCCs). The source of the data received by HADDS is the En Route Automation Modernization (ERAM) at the ARTCC.",
+            "This service currently publishes messages only in\u00a0Flight Information Exchange Model (FIXM) format\u00a0to the NAS Enterprise Messaging Service (NEMS), which in turn\u00a0delivers those messages to subscribers. Consumers\u00a0can choose to receive all messages or a subset\u00a0of messages. This service currently publishes one-minute interval track messages.",
+            "Note: the\u00a0En Route Flight Data Query service is the web service corresponding\u00a0to this publication service."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "Authentication,\u00a0Authorization, and NAS Boundary Protection"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "SWIM Flight Data Publication Service (SFDPS)  (AJM-316)"
+         ]
+      }
+   },
+   "34":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Flight"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Production"
+         ],
+         "serviceVersion":[
+            "2.0"
+         ],
+         "serviceName":[
+            "En Route Flight Data Publication - v2.0 (SFDPS)"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "This service was formerly referred to as \"En Route Flight Data Publication - v1.3.0\". The version number was changed to adhere to governance standards.",
+            "The En Route Flight Data Publication Service publishes flight plan, track, and other flight-related messages. Data published are derived completely from Common Message Set (CMS) messages received by SWIM Flight Data Publication Service (SFDPS) from the Host Air Traffic Managment (ATM) Data Distribution System (HADDS) at each of the Contiguous United States (CONUS) Air Route Traffic Control Centers (ARTCCs). The source of the data received by HADDS is the En Route Automation Modernization (ERAM) at the ARTCC.",
+            "This service publishes messages\u00a0in Simple XML (a custom SFDPS format)\u00a0and Flight Information Exchange Model (FIXM) formats to the NAS Enterprise Messaging Service (NEMS), which in turn\u00a0delivers those messages to subscribers. Consumers\u00a0can choose to receive all messages or a subset\u00a0of messages.",
+            "Track messages are batched to reduce bandwidth consumption.\u00a0Batching bundles many track messages with the same property values together and sends them as one JMS message.",
+            "Note: the\u00a0En Route Flight Data Query service is the web service corresponding\u00a0to this publication service."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "Authentication,\u00a0Authorization, and NAS Boundary Protection"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "SWIM Flight Data Publication Service (SFDPS) (AJM-316)"
+         ]
+      }
+   },
+   "35":{
+      "implementation":{
+         "implementationDescrition":[
+            "SOAP service for creating\u00a0En Route Flight Data Publication service subscriptions"
+         ],
+         "implementationName":[
+            "EnRouteFlightDataPublication"
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Flight"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Deprecated"
+         ],
+         "serviceVersion":[
+            "1.2.9.1"
+         ],
+         "serviceName":[
+            "En Route Flight Data Query (SFDPS)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The En Route Flight Data Publication web service (referred to as the En Route Flight Data Query service in this catalog) accepts requests from consumers for current and historical en route flight data in the System Wide Information Management (SWIM) Flight Data Publication Service (SFDPS). SFDPS maintains the most recent 15 days\u2019 worth of data received from ERAM via HADDS. This web service retrieves this data from the SFDPS database based on filtering criteria specified by consumers in the request, and publishes the resultant data to the consumer. Consumers receive results on a JMS topic assigned to them during the NEMS on-ramping process. The filtering criteria consumers can specify in requests are specified in the SFDPS Web Service Description Document (WSDD). Consumers may use this service to retrieve ad-hoc flight data or to reconstitute their flight data as and when necessary. Messages are published in an XML format conforming to the 'Simple XML' schema, or to the FIXM schema, based on a parameter set in the request.",
+            "Note: the\u00a0En Route Flight Data Publication Service is the publication service corresponding to this query service."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "NEMS handles identification and authentication of SFDPS consumers. SFDPS and NEMS, together, are responsible for data authorization."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "SWIM Flight Data Publication Service (SFDPS) (AJM-316)"
+         ]
+      }
+   },
+   "36":{
+      "implementation":{
+         "implementationDescrition":[
+            "SOAP service for creating\u00a0En Route Flight Data Publication service subscriptions"
+         ],
+         "implementationName":[
+            "EnRouteFlightDataPublication"
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Flight"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Production"
+         ],
+         "serviceVersion":[
+            "2.0"
+         ],
+         "serviceName":[
+            "En Route Flight Data Query -v2.0 (SFDPS)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "This service was formerly referred to as \"En Route Flight Data Query - v2.0\". The version number was changed to adhere to governance standards.",
+            "The En Route Flight Data Publication web service (referred to as the En Route Flight Data Query service in this catalog) accepts requests from consumers for current and historical en route flight data in the System Wide Information Management (SWIM) Flight Data Publication Service (SFDPS). SFDPS maintains the most recent 15 days\u2019 worth of data received from ERAM via HADDS. This web service retrieves this data from the SFDPS database based on filtering criteria specified by consumers in the request, and publishes the resultant data to the consumer. Consumers receive results on a JMS topic assigned to them during the NEMS on-ramping process. The filtering criteria consumers can specify in requests are specified in the SFDPS Web Service Description Document (WSDD). Consumers may use this service to retrieve ad-hoc flight data or to reconstitute their flight data as and when necessary. Messages are published in an XML format conforming to the 'Simple XML' schema, or to the FIXM schema, based on a parameter set in the request. Track messages, though batched for publication, are not batched in the data published in response to a web service request.",
+            "Note: the\u00a0En Route Flight Data Publication Service is the publication service corresponding to this query service."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "NEMS handles identification and authentication of SFDPS consumers. SFDPS and NEMS, together, are responsible for data authorization."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "SWIM Flight Data Publication Service (SFDPS) (AJM-316)"
+         ]
+      }
+   },
+   "37":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Flight"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Deprecated"
+         ],
+         "serviceVersion":[
+            "1.2.9.1"
+         ],
+         "serviceName":[
+            "En Route General Message Publication (SFDPS)"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "The En-Route General Message Publication Service publishes general information and\u00a0status messages.\u00a0Data published are derived completely from Common Message Set (CMS) messages received by SWIM Flight Data Publication Service (SFDPS) from the Host Air Traffic Managment (ATM) Data Distribution System (HADDS) at each of the Contiguous United States (CONUS) Air Route Traffic Control Centers (ARTCCs). The source of the data received by HADDS is the En Route Automation Modernization (ERAM) at the ARTCC.",
+            "This service publishes messages\u00a0in Simple XML (a custom SFDPS format) to the NAS Enterprise Messaging Service (NEMS), which in turn\u00a0delivers those messages to subscribers.\u00a0Consumers\u00a0can choose to receive all messages or a subset\u00a0of messages.",
+            "Note: the\u00a0En Route General Message Query service is the web service corresponding to this publication service."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "Authentication,\u00a0Authorization, and NAS Boundary Protection"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "SWIM Flight Data Publication Service (SFDPS)  (AJM-316)"
+         ]
+      }
+   },
+   "38":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Flight"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Production"
+         ],
+         "serviceVersion":[
+            "2.0"
+         ],
+         "serviceName":[
+            "En Route General Message Publication - v2.0 (SFDPS)"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "This service was formerly referred to as \"En Route General Message Publication - v1.3.0\". The version number was changed to adhere to governance standards.",
+            "The En-Route General Message Publication Service publishes general information and\u00a0status messages.\u00a0Data published are derived completely from Common Message Set (CMS) messages received by SWIM Flight Data Publication Service (SFDPS) from the Host Air Traffic Managment (ATM) Data Distribution System (HADDS) at each of the Contiguous United States (CONUS) Air Route Traffic Control Centers (ARTCCs). The source of the data received by HADDS is the En Route Automation Modernization (ERAM) at the ARTCC.",
+            "This service publishes messages\u00a0in Simple XML (a custom SFDPS format) to the NAS Enterprise Messaging Service (NEMS), which in turn\u00a0delivers those messages to subscribers.\u00a0Consumers\u00a0can choose to receive all messages or a subset\u00a0of messages.",
+            "Note: the\u00a0En Route General Message Query service is the web service corresponding to this publication service."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "Authentication,\u00a0Authorization, and NAS Boundary Protection"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "SWIM Flight Data Publication Service (SFDPS) (AJM-316)"
+         ]
+      }
+   },
+   "39":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Flight"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Deprecated"
+         ],
+         "serviceVersion":[
+            "1.2.9.1"
+         ],
+         "serviceName":[
+            "En Route General Message Query (SFDPS)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The En Route General Message Publication web service (referred to as the En Route General Message Query service in this catalog) accepts requests from consumers for historical en route general message data in the System Wide Information Management (SWIM) Flight Data Publication Service (SFDPS). SFDPS maintains the most recent 15 days\u2019 worth of data received from ERAM via HADDS. This web service retrieves this data from the SFDPS database based on filtering criteria specified by consumers in the request, and publishes the resultant data to the consumer. Consumers receive resultant messages on a JMS topic assigned to them during the NEMS on-ramping process. The filtering criteria consumers can specify in requests are specified in the SFDPS Web Service Description Document (WSDD). Consumers may use this service to retrieve ad-hoc general message data. Messages are published in an XML format conforming to the 'Simple XML' schema.",
+            "Note: the\u00a0En Route General Message Publication Service is the publication service corresponding to this query service."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "NEMS handles identification and authentication of SFDPS consumers. SFDPS and NEMS, together, are responsible for data authorization."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "SWIM Flight Data Publication Service (SFDPS) (AJM-316)"
+         ]
+      }
+   },
+   "40":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Flight"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Production"
+         ],
+         "serviceVersion":[
+            "2.0"
+         ],
+         "serviceName":[
+            "En Route General Message Query - v2.0 (SFDPS)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "This service was formerly referred to as \"En Route General Message Query - v1.3.0\". The version number was changed to adhere to governance standards.",
+            "The En Route General Message Publication web service (referred to as the En Route General Message Query service in this catalog) accepts requests from consumers for historical en route general message data in the System Wide Information Management (SWIM) Flight Data Publication Service (SFDPS). SFDPS maintains the most recent 15 days\u2019 worth of data received from ERAM via HADDS. This web service retrieves this data from the SFDPS database based on filtering criteria specified by consumers in the request, and publishes the resultant data to the consumer. Consumers receive resultant messages on a JMS topic assigned to them during the NEMS on-ramping process. The filtering criteria consumers can specify in requests are specified in the SFDPS Web Service Description Document (WSDD). Consumers may use this service to retrieve ad-hoc general message data. Messages are published in an XML format conforming to the 'Simple XML' schema.",
+            "Note: the\u00a0En Route General Message Publication Service is the publication service corresponding to this query service."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "NEMS handles identification and authentication of SFDPS consumers. SFDPS and NEMS, together, are responsible for data authorization."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "SWIM Flight Data Publication Service (SFDPS) (AJM-316)"
+         ]
+      }
+   },
+   "41":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Operation and Maintenance"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Deprecated"
+         ],
+         "serviceVersion":[
+            "1.2.9.1"
+         ],
+         "serviceName":[
+            "En Route Operational Data Publication (SFDPS)"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "The En Route Operational\u00a0Data Publication service publishes data related to specific FAA monitoring functions, such as traffic count adjustments and instrument approach count adjustments, and operator sign-in/sign-out information. Data published are derived completely from Common Message Set (CMS) messages received by SWIM Flight Data Publication Service (SFDPS) from the Host Air Traffic Managment (ATM) Data Distribution System\u00a0(HADDS) at each of the 20 Contiguous United States (CONUS) Air Route Traffic Control Centers (ARTCCs). The source of the data received by HADDS is the En Route Automation Modernization (ERAM) at the ARTCC.",
+            "This service publishes messages\u00a0in Simple XML (a custom SFDPS format) to the NAS Enterprise Messaging Service (NEMS), which in turn\u00a0delivers those messages to subscribers.\u00a0Consumers\u00a0can choose to receive all messages or a subset\u00a0of messages.",
+            "Note: the\u00a0En Route Operational Data Query service is the web service corresponding to this publication service.",
+            "\u00a0"
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "Authentication,\u00a0Authorization, and NAS Boundary Protection"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "SWIM Flight Data Publication Service (SFDPS) (AJM-316)"
+         ]
+      }
+   },
+   "42":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Operation and Maintenance"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Proposed"
+         ],
+         "serviceVersion":[
+            "2.0"
+         ],
+         "serviceName":[
+            "En Route Operational Data Publication - v2.0 (SFDPS)"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "This service was formerly referred to as \"En Route Operational Data Publication - v1.3.0\". The version number was changed to adhere to governance standards.",
+            "The En Route Operational\u00a0Data Publication service publishes data related to specific FAA monitoring functions, such as traffic count adjustments and instrument approach count adjustments, and operator sign-in/sign-out information. Data published are derived completely from Common Message Set (CMS) messages received by SWIM Flight Data Publication Service (SFDPS) from the Host Air Traffic Managment (ATM) Data Distribution System\u00a0(HADDS) at each of the 20 Contiguous United States (CONUS) Air Route Traffic Control Centers (ARTCCs). The source of the data received by HADDS is the En Route Automation Modernization (ERAM) at the ARTCC.",
+            "This service publishes messages\u00a0in Simple XML (a custom SFDPS format) to the NAS Enterprise Messaging Service (NEMS), which in turn\u00a0delivers those messages to subscribers.\u00a0Consumers\u00a0can choose to receive all messages or a subset\u00a0of messages.",
+            "Note: the\u00a0En Route Operational Data Query service is the web service corresponding to this publication service."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "Authentication,\u00a0Authorization, and NAS Boundary Protection"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "SWIM Flight Data Publication Service (SFDPS) (AJM-316)"
+         ]
+      }
+   },
+   "43":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Operation and Maintenance"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Deprecated"
+         ],
+         "serviceVersion":[
+            "1.2.9.1"
+         ],
+         "serviceName":[
+            "En Route Operational Data Query (SFDPS)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The En Route Operational Data Publication web service (referred to as the En Route Operational Data Query service in this catalog) accepts requests from consumers for historical en route operational data in the System Wide Information Management (SWIM) Flight Data Publication Service (SFDPS). SFDPS maintains the most recent 15 days\u2019 worth of data received from ERAM via HADDS. This web service retrieves this data from the SFDPS database based on filtering criteria specified by consumers in the request, and publishes the resultant data to the consumer. Consumers receive resultant messages on a JMS topic assigned to them during the NEMS on-ramping process. The filtering criteria consumers can specify in requests are specified in the SFDPS Web Service Description Document (WSDD). Consumers may use this service to retrieve ad-hoc operational data. Messages are published in an XML format conforming to the 'Simple XML' schema.",
+            "Note: the\u00a0En Route Operational\u00a0Data Publication Service is the publication service corresponding to this query service."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "NEMS handles identification and authentication of SFDPS consumers. SFDPS and NEMS, together, are responsible for data authorization."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "SWIM Flight Data Publication Service (SFDPS)  (AJM-316)"
+         ]
+      }
+   },
+   "44":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Operation and Maintenance"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Proposed"
+         ],
+         "serviceVersion":[
+            "2.0"
+         ],
+         "serviceName":[
+            "En Route Operational Data Query - v2.0 (SFDPS)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "This service was formerly referred to as \"En Route Operational Data Query - v1.3.0\". The version number was changed to adhere to governance standards.",
+            "The En Route Operational Data Publication web service (referred to as the En Route Operational Data Query service in this catalog) accepts requests from consumers for historical en route operational data in the System Wide Information Management (SWIM) Flight Data Publication Service (SFDPS). SFDPS maintains the most recent 15 days\u2019 worth of data received from ERAM via HADDS. This web service retrieves this data from the SFDPS database based on filtering criteria specified by consumers in the request, and publishes the resultant data to the consumer. Consumers receive resultant messages on a JMS topic assigned to them during the NEMS on-ramping process. The filtering criteria consumers can specify in requests are specified in the SFDPS Web Service Description Document (WSDD). Consumers may use this service to retrieve ad-hoc operational data. Messages are published in an XML format conforming to the 'Simple XML' schema.",
+            "Note: the\u00a0En Route Operational\u00a0Data Publication Service is the publication service corresponding to this query service."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "NEMS handles identification and authentication of SFDPS consumers. SFDPS and NEMS, together, are responsible for data authorization."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            " SWIM Flight Data Publication Service (SFDPS) (AJM-316)"
+         ]
+      }
+   },
+   "45":{
+      "implementation":{
+         "implementationDescrition":[
+            "This service is implemented on NEMS as part of the mediation capability.\u00a0"
+         ],
+         "implementationName":[
+            "Mediation"
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Verification"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "End User Notification"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The\u00a0End User Notification service is a Web Services Base Notification 1.3 (WS-BaseNotification) services for the purpose of delivering event driven notifications using a publish/subscribe pattern.\u00a0"
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "This Web Service uses the OASIS Web Service Security (WS-S*) standards, described in the WSS: SOAP Message Security2 document, for authentication of systems and users. This security feature will allow administrators to manage users\u2019 access to certain ACS functionality by assigning them pre-determined security credentials. The ACS does not allow for data modification through user invoked Web Service calls, this was implemented to maintain integrity for the AI. The calls for the Web Service will use the Hypertext Transport Protocol with the SSL/TLS protocol HTTP(S)). This\u00a0Web Service supports both self-signed TLSv1 and SSLv3 certifications. All requests made to the ACS engine will be archived for auditing purposes. These records will be held for a minimum of three years."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "System Wide Information Management (SWIM) "
+         ]
+      }
+   },
+   "46":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Flight"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+
+         ],
+         "lifeCicleStage":[
+            "Proposed"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "ERAM Flight Information"
+         ],
+         "interfaceType":[
+
+         ],
+         "serviceDescription":[
+            "The Flight Information Service provides an ERAM SWIM service to update a flight plan prior to departure"
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "EnRoute Automation Modernization"
+         ]
+      }
+   },
+   "47":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Development"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Federal NOTAM System (FNS) NOTAM Origination Service (NOS)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The Federal NOTAM System (FNS) NOTAM Origination Service (NOS) is a web-service interface for creating and cancelling NOTAMs.\u00a0 It supports the creation of digital NOTAMs.\u00a0\u00a0"
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "Access to all operations supported by NOS requires a valid user account and password.\u00a0 Requirements for obtaining the user account are provided in security policy section of this document.\u00a0 The user credentials are provided in the SOAP header \u00a0of the payload.\u00a0 In addition all data transmission between the client and the FNS servers are encrypted through SSL."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management directorate (AIM)"
+         ]
+      }
+   },
+   "48":{
+      "implementation":{
+         "implementationDescrition":[
+            "The means by which the Flight Plan Service (FPS) is invoked, including the service's underlying technology protocols and network locations."
+         ],
+         "implementationName":[
+            "FlightPlanImplementation"
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Flight"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Development"
+         ],
+         "serviceVersion":[
+            "1.0.0"
+         ],
+         "serviceName":[
+            "Flight Plan Service (FPS)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            " A service for filing, updating, or canceling\u00a0an IFR (Instrument Flight Rules) flight plan."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "FAA En Route Services Modernization Group (ESMG)"
+         ]
+      }
+   },
+   "49":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Verification"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "FNS NOTAM Distribution"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The Federal Notice to Airmen (NOTAM) System (FNS) NOTAM Distribution Service (FNS-NDS) is a web service that provides digital NOTAM messages in Aeronautical Information Exchange Model (AIXM) format\u00a0in response to requests by end users. The FNS-NDS is a system-to-system interface that enables end systems to receive digital NOTAMs from FNS. The FNS-NDS uses the event schema developed by the international Digital NOTAM Focus Group jointly led by EUROCONTROL and the FAA. Digital NOTAM messages exchanged through the FNS-NDS include static baseline features as well as the temporary changes due the NOTAM event and enable the graphical display of NOTAMs. The FNS NDS supports the distribution of all NOTAMs, to include the digital NOTAMs originated through the FNS as well as legacy NOTAMs originated through the legacy system."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management "
+         ]
+      }
+   },
+   "50":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Airport"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Verification"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "FNS NOTAM Publication"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "Accurate, timely distribution of aeronautical information is critical to the safety and efficiency of the National Airspace System (",
+            "). The Federal NOTAM System (FNS) is a component of the NAS, and a centerpiece of the FAA\u2019s Aeronautical Information Management (",
+            ") Modernization plan. In order to accomplish this modernization, the FAA has reached out to stakeholders from different industries to create a modern digital NOTAM system designed to meet current and future customer needs. The FAA has also worked closely with EUROCONTROL in developing a common and harmonized distribution message based on AIXM to ensure a seamless process for the ingestion of NOTAMs (dynamic data) provided by the United States and countries throughout the world.",
+            "While the current legacy system also has a machine interface for distributing NOTAMs, the FNS-NDS Pub/Sub offers numerous benefits, including, but not limited to: a) uses NAS Enterprise Message Service (",
+            ") for distributing NOTAMs; b) uses AIXM as the message payload c) schema used is harmonized between both FAA and EUROCONTROL. Digital data, including geometries of the affected features, are only available for NOTAMs originated or transformed by the FNS. NOTAMs not originated through FNS are still included in FNS-NDS Pub/Sub, but only contain limited data provided from the legacy system.",
+            "Looking towards the Next Generation Air Transportation System (NextGen), AIM has implemented the FNS-NDS Pub/Sub publishing capability as a service designed in accordance with the principle of Enterprise Messaging and deployed in the NAS System Wide Information Management (SWIM) environment via the NAS Enterprise Messaging Service (NEMS).",
+            "The purpose of this document is to describe the FNS-NDS Pub/Sub interface and provide the procedure for accessing this service. This document should be used along with the Airport Operations, Technical Operations, and Tower Light Outage event scenario documents, referenced in Other FAA Publications of Section 2.1, to build the client interface.",
+            "The FNS NOTAM Publication is a subscription based service\u00a0for publishing\u00a0NOTAMs. It supports all NOTAMs, legacy and digital, published in the United States NOTAM System (",
+            ").\u00a0"
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "Access to all operations supported by the FNS-NDS Pub/Sub requires a valid user account and password. User credentials to the service are provided in the JMS API as specified in Secion 3.1.1 of ",
+            ".",
+            "The Service\u00a0deploys the following security mechanisms: \u00a0audit.\u00a0",
+            "The Service delegates the following security mechanisms to the NEMS: authentication, authorization, and integrity. For information on implementation of these security mechaninsms, see the NEMS ICD"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management "
+         ]
+      }
+   },
+   "51":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Verification"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Get Static SAA"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The Get Static SAA service provides the capability to retrieve the static legal definition of a Special Activity Airspace (SAA).",
+            "SAA is a non-official term of convenience to collectively describe Special Use Airspaces (SUA), Air Traffic Control Assigned Airspaces (ATCAA), and other airspaces that can be reserved for use by the military or for other special-purpose operations. The term SAA \u00a0to SUAs and ATCAAs.\u00a0",
+            "A SUA is a region of airspace defined by the FAA, and designated to be activated based on a schedule request, typically from a military agency.\u00a0 The request must generally be agreed to by the FAA controlling agency responsible for that airspace.\u00a0 The time periods when an airspace is reserved for special use define when public use of the airspace will not be allowed due to safety and/or security concerns.",
+            "An ATCAA is an airspace assigned by Air Traffic Control to provide air traffic segregation between the specified activities being conducted within the assigned airspace and other Instrument Flight Rules (IFR) traffic."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "This Service\u00a0security mechanisms require that a username and password be provided to authenticate\u00a0each web service request. \u00a0The Consumer should implement the WS-Security UsernameToken Profile to provide user authentication at the SOAP Message Level.\u00a0"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management (AIM)"
+         ]
+      }
+   },
+   "52":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Weather"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Arrival and Departure"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Production"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Integrated Terminal Weather Service (ITWS)"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "The ITWS services will provide clients with the ability to subscribe to a variety of supported ITWS products. For the complete list of ITWS products please refer to the ISSC Comprehensive User Guide (Reference 15)."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "The ITWS Information Service only employs security control through the use of JMS header properties"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "US DOT Volpe Center"
+         ]
+      }
+   },
+   "53":{
+      "implementation":{
+         "implementationDescrition":[
+            "Bindings identify the protocols and data formats that are used during the execution of a web service. The subsequent sections describe the communication and messaging protocols and identify the network address for accessing the service."
+         ],
+         "implementationName":[
+            "WcsInterface"
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Weather"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning, Airport, Arrival and Departure, En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Development"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "NWS WINS WCS Gridded data products"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aviation Weather & Aeronautical Services (AJM-33) Weather and Radar Processor"
+         ]
+      }
+   },
+   "54":{
+      "implementation":{
+         "implementationDescrition":[
+            "Bindings identify the protocols and data formats that are used during the execution of a web service. The WINS WFS implements separate bindings for each of the three (3) service interfaces which are named as follows: WFS, NotificationProducer, and SubscriptionManager. The subsequent sections describe the communication and messaging protocols and identify the network address for accessing the service."
+         ],
+         "implementationName":[
+            "WfsInterface"
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Weather"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning, Airport, Arrival and Departure, En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Development"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "NWS WINS WFS Non Gridded products"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aviation Weather & Aeronautical Services (AJM-33) Weather and Radar Processor"
+         ]
+      }
+   },
+   "55":{
+      "implementation":{
+         "implementationDescrition":[
+            "The WMSCR SWIM client may subscribe to a NEMS specified topic to obtain distributed reports.\u00a0 WMSCR will publish messages, via the WMSCR SWIM FEP to the NEMS, which will publish the messages to each registered client\u2019s topic in the NEMS. NEMS will notify SWIM clients of the published messages.\u00a0 This notification is an output message only.\u00a0 There is no corresponding response for the publishing operation.\u00a0 A client may send an acknowledgement for the published message to WMSCR outside of the JMS publishing/subscribe processing.\u00a0 Clients may subscribe to Altimeter Setting reports using the individual subscriber topics.",
+            "\u00a0",
+            "The topics available at this time are:",
+            "/topic/reports/PilotReport",
+            "/topic/reports/AltimeterSetting",
+            "\u00a0",
+            "The subscription mechanism\u00a0 for the NEMS shall support selecting reports and filtering by the following report attributes: report ID, report time, latitude, longitude, altitude, station ID, state, and ARTCC ID.\u00a0 The\u00a0 NEMS software will publish a single set of information\u00a0 for\u00a0 the Altimeter Setting services, and the consumer client\u00a0 can adjust a setting that support receipt of all or a subset of reports based upon the attributes that are externalized.",
+            "\u00a0",
+            "The message flow to publish a message is asynchronous and starts with the client requesting a connection and a subscription from the service.\u00a0 As data becomes available, it is provided by the Core to the FEP, and the FEP publishes the messages to the NEMS.\u00a0 The NEMS stores the message on each client\u2019s registered topic. If the client is connected to the NEMS, the message will be delivered from the client\u2019s topic to the client. If the client is not connected to its topic, the message is purged from the queue after its time-to-live has expired. The subscription request is performed once for each desired subscription, and the messages are published to the client until the subscription is cancelled.",
+            "\u00a0",
+            "A detailed message flow for publishing a report is below:",
+            "\u00a0",
+            "\u00a0",
+            "Consumer access to Altimeter Setting reports using JMS is determined by many factors.\u00a0 The client software and related API dictate how the consumer will gain access to the reports published by WMSCR via the NEMS.\u00a0 The information in this section\u00a0 is an example of using the JMS API for connecting/subscribing and unsubscribing to one of the NEMS JMS topics.\u00a0",
+            "\u00a0",
+            "To connect/subscribe:",
+            "\u00a0",
+            "The input parameters for the subscription are listed below:"
+         ],
+         "implementationName":[
+            "Publish Altimeter Setting (WMSCR)"
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Weather"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Flight Planning, Arrival and Departure, En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Verification"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Publish Altimeter Setting (WMSCR)"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "This service publishes Altimeter Setting reports from the WMSCR (Weather Message Switching Center Replacement) Core system to NEMS via ActiveMQ Message Brokers for consumers subscribed to this service.\u00a0 The Altimeter Setting reports are extracted from METARs (Meteorological Reports) stored in the WMSCR Core database. NEMS is the managing agent between the consumers for this service and WMSCR (the producer). Altimeter Setting reports are available on the Altimeter Setting topic in NEMS until the report expires or it is retrieved by the consumer."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Weather Message Switching Center Replacement (WMSCR)"
+         ]
+      }
+   },
+   "56":{
+      "implementation":{
+         "implementationDescrition":[
+            "The WMSCR SWIM client may subscribe to a NEMS specified topic to obtain distributed reports.\u00a0 WMSCR will publish messages, via the WMSCR SWIM FEP to the NEMS, which will publish the messages to each registered client\u2019s topic in the NEMS. NEMS will notify SWIM clients of the published messages.\u00a0 This notification is an output message only.\u00a0 There is no corresponding response for the publishing operation.\u00a0 A client may send an acknowledgement for the published message to WMSCR outside of the JMS publishing/subscribe processing.\u00a0 Clients may subscribe to either PIREP reports using the individual subscriber topics.",
+            "\u00a0",
+            "The topics available at this time are:",
+            "/topic/reports/PilotReport",
+            "/topic/reports/AltimeterSetting",
+            "\u00a0",
+            "The subscription mechanism\u00a0 for the NEMS shall support selecting reports and filtering by the following report attributes: report ID, report time, latitude, longitude, altitude, station ID, state, and ARTCC ID.\u00a0 The\u00a0 NEMS software will publish a single set of information\u00a0 for\u00a0 the PIREP services, and the consumer client\u00a0 can adjust a setting that support receipt of all or a subset of reports based upon the attributes that are externalized.",
+            "\u00a0",
+            "The message flow to publish a message is asynchronous and starts with the client requesting a connection and a subscription from the service.\u00a0 As data becomes available, it is provided by the Core to the FEP, and the FEP publishes the messages to the NEMS.\u00a0 The NEMS stores the message on each client\u2019s registered topic. If the client is connected to the NEMS, the message will be delivered from the client\u2019s topic to the client. If the client is not connected to its topic, the message is purged from the queue after its time-to-live has expired. The subscription request is performed once for each desired subscription, and the messages are published to the client until the subscription is cancelled.",
+            "\u00a0",
+            "A detailed message flow for publishing a report is below:",
+            "\u00a0",
+            "\u00a0",
+            "Consumer access to PIREP reports using JMS is determined by many factors.\u00a0 The client software and related API dictate how the consumer will gain access to the reports published by WMSCR via the NEMS.\u00a0 The information in this section\u00a0 is an example of using the JMS API for connecting/subscribing and unsubscribing to one of the NEMS JMS topics.\u00a0",
+            "\u00a0",
+            "To connect/subscribe:",
+            "\u00a0",
+            "The input parameters for the subscription are listed below:"
+         ],
+         "implementationName":[
+            "Service Implementation"
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical, Flight"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Arrival and Departure, En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Verification"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Publish PIREP (WMSCR)"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "This service publishes PIREP reports from the WMSCR Core system to NEMS via ActiveMQ Message Brokers for consumers subscribed to this service.\u00a0 The PIREP reports are stored in the WMSCR Core database. NEMS is the managing agent between the consumers for this service and WMSCR (the producer). PIREP reports are available on the PIREP topic in NEMS until the report expires or it is retrieved by the consumer. WMSCR publishes both PIREP reports and Urgent PIREP reports to this topic."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "WMSCR Tech Ops Support, Software Engineer Flight Service and Weather Engineering Office"
+         ]
+      }
+   },
+   "57":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Definition"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Put Static SAA"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The Put\u00a0Static SAA service provides the capability to insert or update the static legal definition of a Special Activity Airspace (SAA).",
+            "SAA is a non-official term of convenience to collectively describe Special Use Airspaces (SUA), Air Traffic Control Assigned Airspaces (ATCAA), and other airspaces that can be reserved for use by the military or for other special-purpose operations. The term SAA refers to both SUAs and ATCAAs.\u00a0",
+            "A SUA is a region of airspace defined by the FAA, and designated to be activated based on a schedule request, typically from a military agency.\u00a0 The request must generally be agreed to by the FAA controlling agency responsible for that airspace.\u00a0 The time periods when an airspace is reserved for special use define when public use of the airspace will not be allowed due to safety and/or security concerns.",
+            "An ATCAA is an airspace assigned by Air Traffic Control to provide air traffic segregation between the specified activities being conducted within the assigned airspace and other Instrument Flight Rules (IFR) traffic."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management (AIM)"
+         ]
+      }
+   },
+   "58":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Definition"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "SAA Operational Schedule"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The\u00a0SAA Operational Schedule\u00a0service is a System Wide Information Management (SWIM) compliant Web Service \u00a0that provides the ability to update SAA operational schedules and status information as well as disseminate them to users of the service.",
+            "SAA is a non-official term of convenience to collectively describe Special Use Airspaces (SUA), Air Traffic Control Assigned Airspaces (ATCAA), and other airspaces that can be reserved for use by the military or for other special-purpose operations. The use of the term SAA in this document refers to SUAs and ATCAAs.\u00a0",
+            "A SUA is a region of airspace defined by the FAA, and designated to be activated based on a schedule request, typically from a military agency.\u00a0 The request must generally be agreed to by the FAA controlling agency responsible for that airspace.\u00a0 The time periods when an airspace is reserved for special use define when public use of the airspace will not be allowed due to safety and/or security concerns.",
+            "An ATCAA is an airspace assigned by Air Traffic Control to provide air traffic segregation between the specified activities being conducted within the assigned airspace and other Instrument Flight Rules (IFR) traffic."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management (AIM)"
+         ]
+      }
+   },
+   "59":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Definition"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "SAA Schedule Notification"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "The SAA Schedule Notification\u00a0service is an asynchronous Java Message Service (JMS) publish/subscribe (pub/sub) service that provides notifications of SAA schedule events, and upcoming SAA activations. The client subscription includes message selector options to specify which messages they should receive. These notification messages are persisted by JMS to ensure their receipt by subscribers. \u00a0",
+            "SAA is a non-official term of convenience to collectively describe Special Use Airspaces (SUA), Air Traffic Control Assigned Airspaces (ATCAA), and other airspaces that can be reserved for use by the military or for other special-purpose operations. The use of the term SAA in this document refers to SUAs and ATCAAs.\u00a0",
+            "A SUA is a region of airspace defined by the FAA, and designated to be activated based on a schedule request, typically from a military agency.\u00a0 The request must generally be agreed to by the FAA controlling agency responsible for that airspace.\u00a0 The time periods when an airspace is reserved for special use define when public use of the airspace will not be allowed due to safety and/or security concerns.",
+            "An ATCAA is an airspace assigned by Air Traffic Control to provide air traffic segregation between the specified activities being conducted within the assigned airspace and other Instrument Flight Rules (IFR) traffic."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management (AIM) "
+         ]
+      }
+   },
+   "60":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Definition"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Static SAA Updates Notification "
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "The Static SAA Updates Notification service is a Java Message Service (JMS) publish/subscribe (pub/sub) service that provides notifications for when an SAA definition is added or updated.",
+            "SAA is a non-official term of convenience to collectively describe Special Use Airspaces (SUA), Air Traffic Control Assigned Airspaces (ATCAA), and other airspaces that can be reserved for use by the military or for other special-purpose operations. The use of the term SAA in this document refers to SUAs and ATCAAs.\u00a0",
+            "A SUA is a region of airspace defined by the FAA, and designated to be activated based on a schedule request, typically from a military agency.\u00a0 The request must generally be agreed to by the FAA controlling agency responsible for that airspace.\u00a0 The time periods when an airspace is reserved for special use define when public use of the airspace will not be allowed due to safety and/or security concerns.",
+            "An ATCAA is an airspace assigned by Air Traffic Control to provide air traffic segregation between the specified activities being conducted within the assigned airspace and other Instrument Flight Rules (IFR) traffic.",
+            "\u00a0"
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "Access to all operations supported by the Static SAA Updates Notification Service requires a valid user account and password. User credentials to the service are provided in the JMS API as specified in Section 3.1.1 of the NAS Enterprise Messaging Service (NEMS) ICD."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Aeronautical Information Management (AIM)"
+         ]
+      }
+   },
+   "61":{
+      "implementation":{
+         "implementationDescrition":[
+            "The STDDS client may subscribe to a NEMS specified topic to obtain distributed reports. STDDS will publish messages to the NEMS, which will publish the messages to each registered client\u2019s topic in the NEMS. NEMS will notify SWIM clients of the published messages. A client can subscribe to service provided data based on message type and airport. In addition, a client can subscribe to STDDS service status messages based on the message type and a TRACON identifier"
+         ],
+         "implementationName":[
+            "APDS Implementation"
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Flight, Navigation"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Airport, Arrival and Departure"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Verification"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "STDDS Airport Data Service (APDS)"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "STDDS Airport Data (APD). The SWIM Terminal Data Distribution System (STDDS) Airport Data (APD) service publishes Runway Visual Range (RVR) data to SWIM consumers. Data includes runway visibility and trend for touchdown, midpoint and rollout, depending on the instrumentation for the runway. Data also includes edge and centerline light intensity settings"
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "NEMS manages all security features for Publish/Subscribe services for authorized NAS and non-NAS consumers and NAS producers. Access controls are supported through the use of username and password credentials supplied when establishing connections to NEMS interfaces. Username and password credentials are unique to each NEMS client and established during on-ramping.The STDDS APDS does not contain sensitive flight data."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "SWIM Terminal Data Description System (STDDS)"
+         ]
+      }
+   },
+   "62":{
+      "implementation":{
+         "implementationDescrition":[
+            "The STDDS ISMC is implemented as a JMS-Publish service. All access points to the service are wholly contained within NEMS. STDDS ISMC publishes data to NEMS via a JMS queue. Clients connect to a topic established by NEMS in order to receive STDDS ISMC data.\u00a0"
+         ],
+         "implementationName":[
+            "ISMC Implementation"
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Flight, Navigation"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Airport, Arrival and Departure"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Verification"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "STDDS Infrastructure System Monitor and Control (ISMC)"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "The Infrastructure, System Monitor and Control service sends status information for external systems associated with an STDDS site."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "NEMS manages all security features for Publish/Subscribe services for authorized NAS and non-NAS consumers and NAS producers. Access controls are supported through the use of username and password credentials supplied when establishing connections to NEMS interfaces. Username and password credentials are unique to each NEMS client and established during on-ramping."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "SWIM Terminal Data Description System (STDDS)"
+         ]
+      }
+   },
+   "63":{
+      "implementation":{
+         "implementationDescrition":[
+            "The STDDS SMES is implemented as a JMS-Publish service. All access points to the service are wholly contained within NEMS. STDDS SMES publishes data to NEMS via a JMS queue. Clients connect to a topic established by NEMS in order to receive STDDS SMES data.\u00a0"
+         ],
+         "implementationName":[
+            "SMES Implementation"
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Surveillance"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Airport, Arrival and Departure"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Verification"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "STDDS Surface Movement Event  (SMES)"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "The Surface Movement Event Service sends derived surface movement events for all aircraft monitored at select towers associated with a TRACON. In addition, the service sends ASDE-X/ASSC track positions for all aircraft and vehicles collected from towers associated with a TRACON."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "NEMS manages all security features for Publish/Subscribe services for authorized NAS and non-NAS consumers and NAS producers. Access controls are supported through the use of username and password credentials supplied when establishing connections to NEMS interfaces. Username and password credentials are unique to each NEMS client and established during on-ramping."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "SWIM Terminal Data Description System (STDDS)"
+         ]
+      }
+   },
+   "64":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+            "TAIS Implementation "
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Surveillance"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Arrival and Departure"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Verification"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "STDDS Terminal Automation Information (TAIS)"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "The Terminal Automation Information Service (TAIS) publishes operational live flight plan data, track data, sign-in / sign-out (SISO) data, alert data, Instrument Meteorological Conditions (IMC) data, traffic count data, and performance monitoring data from the Standard Terminal Automation Replacement System (STARS) to authorized SWIM service consumers via the National Airspace System (NAS) Enterprise Messaging Service (NEMS)."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "NEMS manages all security features for Publish/Subscribe services for authorized NAS and non-NAS consumers and NAS producers. Access controls are supported through the use of username and password credentials supplied when establishing connections to NEMS interfaces. Username and password credentials are unique to each NEMS client and established during on-ramping."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "SWIM Terminal Data Description System (STDDS)"
+         ]
+      }
+   },
+   "65":{
+      "implementation":{
+         "implementationDescrition":[
+            "The STDDS TDES is implemented as a JMS Publish service. All access points to the service are wholly contained within NEMS. STDDS TDES publishes data to NEMS via a JMS queue and receives reconstitution requests via another JMS queue. Clients connect to a topic established by NEMS in order to receive STDDS TDES data. Clients connect to a different topic established by NEMS in order to send reconstitution requests.\u00a0"
+         ],
+         "implementationName":[
+            "TDES Implementation"
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Flight, Navigation"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Airport, Arrival and Departure"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Verification"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "STDDS Tower Departure Event (TDES)"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "The Tower Departure Event Service sends departure events for all flights from select towers associated with a TRACON. In addition, the service provides a reconstitution mechanism for end-users interested in receiving historic departure events upon startup."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "NEMS manages all security features for Publish/Subscribe services for authorized NAS and non-NAS consumers and NAS producers.",
+            "Access controls are supported through the use of username and password credentials supplied when establishing connections to NEMS interfaces. Username and password credentials are unique to each NEMS client and established during on-ramping.",
+            "The STDDS TDES does not filter sensitive data and is only available for subscription by consumers who are authorized to receive sensitive data."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "SWIM Terminal Data Description System (STDDS)"
+         ]
+      }
+   },
+   "66":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Aeronautical, Navigation"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Flight Planning, Arrival and Departure"
+         ],
+         "messagingMode":[
+            "Point-to-Point"
+         ],
+         "lifeCicleStage":[
+            "Verification"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Submit Altimeter Setting (WMSCR)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "This service allows an external entity to submit an altimeter setting to WMSCR, which then stores the report data and makes it available for distribution and retrieval"
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Weather Message Switching Center Replacement (WMSCR)"
+         ]
+      }
+   },
+   "67":{
+      "implementation":{
+         "implementationDescrition":[
+            "The Submit PIREP Web Service is implemented using SOAP over HTTP or HTTPS messaging and use synchronous messaging.\u00a0 The Submit PIREP service uses the submit report message flow:",
+            "All of the message flows involve four entities:",
+            "\u00a0",
+            "\u00a0",
+            "\u00a0",
+            "The message flow for submitting a report starts with the client through the NEMS, , flows to the SOA Server, is sent to Core, and returns.\u00a0 This message flow is synchronous and requires a response within a limited time for each request.",
+            "\u00a0",
+            "A detailed message flow for submitting a report is below:",
+            "\u00a0",
+            "The diagram for the Submit Report Message Flow appears below:",
+            "\u00a0",
+            "\u00a0",
+            "\u00a0",
+            "\u00a0"
+         ],
+         "implementationName":[
+            "Submit PIREP Service"
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Weather"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "NAS Management"
+         ],
+         "messagingMode":[
+            "Point-to-Point"
+         ],
+         "lifeCicleStage":[
+            "Production"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "Submit PIREP (WMSCR)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "This service allows an external entity to submit a PIREP to WMSCR, which then stores the report data and makes it available for distribution and retrieval.",
+            "Namespace: urn:us:gov:dot:faa:weather:iesp:nwrx"
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "NEMS defines the login credentials used by the\u00a0user to access NEMS and\u00a0the Submit PIREP service. Access controls are supported through the use of username and password credentials supplied when establishing connections to NEMS interfaces.\u00a0 Username and password credentials are unique to each NEMS client and established during on-ramping.",
+            "WMSCR performs role-based validation based on the username to determine which service and subset of the service, for which the user is authorized.",
+            "WMSCR SubmitPIREP delegates additional security measures to the NEMS. See NEMS ICD for a more detailed description of this security service\u200b."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "WMSCR Tech Ops Support, Software Engineer Flight Service and Weather Engineering Office"
+         ]
+      }
+   },
+   "68":{
+      "implementation":{
+         "implementationDescrition":[
+            "TBFM Metering Information Service is implemented as a JMS-P service. All access points to the service are wholly contained within NEMS. Hence, the data, transport, and message protocols as well as the network address detailed below are applicable to NEMS only."
+         ],
+         "implementationName":[
+            "JMS-P"
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Flight"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Development"
+         ],
+         "serviceVersion":[
+            "4.3"
+         ],
+         "serviceName":[
+            "TBFM Metering Publication (TBFM-MIS)"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "This service provides the following data products: TBFM Metering Status, TBFM Interface Status, TRACON Name, Gate Name, Arrival Airport Information, Airport Configuration, MRE Information, Arrival Airport Configuration Information, Airport Acceptance Rate Group, Terminal Radar Approach Control (TRACON) Acceptance Rate Group, Meter Point Acceptance Rate Group, Runway Acceptance Rate Group, Super Stream Class Configuration Group, Satellite Airport Configuration Group, Flight Plan Information, Estimated Times of Arrivals (ETA), Scheduled Times of Arrival (STA), Meter Reference Element (MRE) information, and Scheduling information."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "TBFM Metering Information Service is deployed in the \u201cuntrusted\u201d region, providing access to both NAS and Non-NAS users, and is fully dependent upon the NAS Enterprise Messaging Service (NEMS) for access control to verify the identity of the users, to grant the rights and permissions to access system resources, and other processes by which access to system resources is regulated according to a security policy.",
+            "TBFM Metering Information Service only employs security control through the use of JMS header properties, as described in Messages section. All the security mechanisms below are provided by NEMS.",
+            "The NEMS security capability provides authentication and service level access control including integrity, privacy, and encryption.",
+            "Access controls are supported through the use of username and password credentials supplied when establishing connections to NEMS interfaces. Username and password credentials are unique to each NEMS client and established during on-ramping.",
+            "Transport level encryption of messages between NEMS and Providers and Consumers is to be supported using Secure Socket Layer (SSL) and X.509 self-signed certificates established during the on-ramping process.",
+            "Regarding encryption, NEMS has not enabled the use of SSL and X.509 certificates at this time.\u00a0 Those features will be released at a later date (Capability B5).",
+            "Message bodies are validated against published service interface descriptions in the XML schemas."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Time-Based Flow Management"
+         ]
+      }
+   },
+   "69":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Flight"
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+            "Flight Planning"
+         ],
+         "messagingMode":[
+            "Essential"
+         ],
+         "lifeCicleStage":[
+            "Proposed"
+         ],
+         "serviceVersion":[
+
+         ],
+         "serviceName":[
+            "TBFM Release Time Coordination Service (TBFM-RTCS)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "The Release Time Coordination Service (RTCS) provides automated interfacility coordination of a Call For Release (CFR) metering program. When a CFR metering program is in effect, the overlying ARTCC requires a terminal facility to secure ARTCC approval for release of a departure into the terminal or en route environment.",
+            "This service allows authorized NAS subscribers to request a departure release time through automation when facilities are in Call for Release (CFR) operations that have been initiated via TBFM. This service will be integrated with TBFM\u2019s Integrated Departure Arrival Capability (IDAC) allowing external systems to request a departure release time that is approved and synchronized with the approving authority\u2019s IDAC component.",
+            "RTCS will use the request-response (R-R) Message Exchange Pattern (MEP) between TBFM and TFDM."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+
+         ]
+      }
+   },
+   "70":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Flight"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Airport"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Proposed"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "TFDM Airport and Flight Information (AFIS)"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "Service to publish and maintain information concerning an airport\u2019s configuration, demand, delay, other airport information, and flight specific data and delay information."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "This section will be updated when actual solution is available.\u00a0 Security will be implemented per following requirements:",
+            "1. The AFIS SHOULD comply with NIST Special Publication 800-95, Guide to Secure Web Services, National Institute of Standards and Technology, August 2007, available at ",
+            ".",
+            "2. The AFIS MUST comply with FAA Order 1370.114, Implementation of Federal Aviation Administration (FAA) Telecommunications Infrastructure (FTI) Services and Information Security Requirements in the National Airspace System (NAS) [1370.114].",
+            "3. The AFIS MUST implement boundary protection in accordance with FAA Order 1370.116, Boundary Protection Policy [1370.116]."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Terminal Flight Data Manager (TFDM)"
+         ]
+      }
+   },
+   "71":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+
+         ],
+         "messagingMode":[
+
+         ],
+         "lifeCicleStage":[
+            "Proposed"
+         ],
+         "serviceVersion":[
+
+         ],
+         "serviceName":[
+            "TFDM Flight Substitutions and Operational Metrics Service (FSOMS)"
+         ],
+         "interfaceType":[
+
+         ],
+         "serviceDescription":[
+
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+
+         ]
+      }
+   },
+   "72":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+
+         ],
+         "messagingMode":[
+
+         ],
+         "lifeCicleStage":[
+            "Proposed"
+         ],
+         "serviceVersion":[
+
+         ],
+         "serviceName":[
+            "TFDM FOS Airport Data Information (ADIS)"
+         ],
+         "interfaceType":[
+
+         ],
+         "serviceDescription":[
+
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+
+         ]
+      }
+   },
+   "73":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+
+         ],
+         "messagingMode":[
+
+         ],
+         "lifeCicleStage":[
+            "Proposed"
+         ],
+         "serviceVersion":[
+
+         ],
+         "serviceName":[
+            "TFDM General Information Service (GIS)"
+         ],
+         "interfaceType":[
+
+         ],
+         "serviceDescription":[
+
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+
+         ]
+      }
+   },
+   "74":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+
+         ],
+         "messagingMode":[
+
+         ],
+         "lifeCicleStage":[
+            "Proposed"
+         ],
+         "serviceVersion":[
+
+         ],
+         "serviceName":[
+            "TFDM Information Service (TIS)"
+         ],
+         "interfaceType":[
+
+         ],
+         "serviceDescription":[
+
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+
+         ]
+      }
+   },
+   "75":{
+      "implementation":{
+         "implementationDescrition":[
+            "TFMData implements JMS services using the NEMS JMS provider. TFMS will connect to and send data to several NEMS JMS queues which will be discussed in this section.",
+            "The TFM application shall receive JMS messages from three distinct NEMS Queue end-points.\u00a0 The TFM application shall transmit JMS messages to six distinct NEMS Queue end-points, one for each business class. The purpose of the separate queue approach is to clearly delineate the business functions and to:",
+            "NEMS is responsible for the delivery of output data to the ultimate users. Therefore for the purpose of this document we will consider NEMS queue as the end point. The names of the queues named here are to facilitate the discussion. The actual names are to be defined by NEMS and will be available in the NSRR."
+         ],
+         "implementationName":[
+            "Bindings"
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Flight"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Arrival and Departure"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Production"
+         ],
+         "serviceVersion":[
+            "R10- v1.9"
+         ],
+         "serviceName":[
+            "TFM Data"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "The service name is Traffic Flow Management Data (TFMData) Service. The TFMData Service is provided by the Traffic Flow Management System located in the FAA\u2019s WJHTC collocated with the Atlantic City International Airport in NJ. The TFMData Service proves traffic flow management data to SWIM in support of Next Generation Air Transportation System (NextGen) objectives. TFMData is a pure JMS service that provides streaming data updates as well as a variety of request/reply functions. The data provided includes messages received by other systems which are enhanced by TFMS. The enhanced elements include (but are not limited to) converted route information, entry/exit data for certain TMI\u2019s, other computed date such as RAPT timeline data, NTML restrictions, and more. There is also specific support for International users such that they can provide TFMS their data and vice versa all in FIXM format. Similarly TFMData supports the TFDM program by providing Airline provided data to the TFDM system."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "TFMS"
+         ]
+      }
+   },
+   "76":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Flight"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Arrival and Departure"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Production"
+         ],
+         "serviceVersion":[
+            "v2.0.5"
+         ],
+         "serviceName":[
+            "TFMData R13"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "The service name is tfmDataService. The TFMData Service is provided by the Traffic Flow Management System located in the FAA\u2019s William J. Hughes Technical Center (WJHTC) collocated with the Atlantic City International Airport in NJ. The TFMData Service proves traffic flow management data to SWIM in support of Next Generation Air Transportation System (NextGen) objectives. TFMData is a pure JMS service that provides streaming data updates as well as a variety of request/reply functions. The data provided includes messages received by other systems which are enhanced by TFMS. The enhanced elements include (but are not limited to) converted route information, entry/exit data for certain TMI\u2019s, other computed date such as Route Availability Planning Tool (RAPT) timeline data, National Traffic Management Log (NTML) restrictions, and more. There is also specific support for International users such that they can provide TFMS their data and vice versa all in FIXM format. Similarly TFMData supports the TFDM program by providing Airline provided data to the TFDM system."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "TFMData will be transmitted from TFMS to NEMS using NEMS JMS provider services. In accordance with FAA Order 1370.114 (reference [3]), there will be no Secure Socket Layer (SSL) encryption of data but will use username and password credentials provided by the NEMS program for use in the NEMS-provided JMS APIs."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "TFMS"
+         ]
+      }
+   },
+   "77":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+
+         ],
+         "serviceCriticalLevel":[
+
+         ],
+         "atmServiceCategory":[
+
+         ],
+         "messagingMode":[
+
+         ],
+         "lifeCicleStage":[
+            "Proposed"
+         ],
+         "serviceVersion":[
+
+         ],
+         "serviceName":[
+            "TFMS Departure Queue Acknowledgment Service (DQAS)"
+         ],
+         "interfaceType":[
+
+         ],
+         "serviceDescription":[
+
+         ]
+      },
+      "security":{
+         "securityDescription":[
+
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+
+         ]
+      }
+   },
+   "78":{
+      "implementation":{
+         "implementationDescrition":[
+            "HWDS is implemented as a ",
+            " ",
+            ". All access points to the service are wholly contained within ",
+            ". Hence, the data, transport, and ",
+            " protocols as well as the network address detailed below are applicable to NEMS only."
+         ],
+         "implementationName":[
+            "HWDS"
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Weather"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Flight Planning, Airport, Arrival and Departure, En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Proposed"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "WARP Publication"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "Harris Weather Data Service (HWDS) provides real-time weather information to end users.",
+            "The WARP system is a computer-based interactive, meteorological data processing system that simultaneously and continuously receives, processes, stores, distributes, and displays aviation-related weather information and radar product.\u00a0 WARP operational systems are deployed at two National Weather sites located at ZTL and ZLC ARTCCs, four Regional Sites (ZSE, ZFW, ZAU, and ZDC ARTCCs), 22 En Route sites (Conterminous United States (CONUS) ARTCCs, the Alaska ARTCC (ZAN), and the ATCSCC (CC0) in Warrenton, VA), three Central Radar Approaches (CERAPs) (ZHN, ZSU and ZUA) and three TRACONs (IND, D10, and DEN).\u00a0 Non-operational systems are provided at the FAA Technical Center and Harris facility in Melbourne, FL."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "HWDS accessibility utilizes the ",
+            " for access control to verify the identity of the users, to grant the rights and permissions to access system resources, content services, and other processes by which access to system resources is regulated according to a ",
+            " policy. That is, this ",
+            " employs the ",
+            " ",
+            ".\u00a0 All the security mechanisms are provided by NEMS and are described in the NEMS Asynchronous Messaging Interface Control Document (ICD).",
+            "HWDS is deployed in the \u201cuntrusted\u201d region of the NAS Enterprise Security Gateway (NESG).\u00a0 NEMS enables connectivity from the \u201cuntrusted\u201d region to the NAS."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Harris Commercial Weather"
+         ]
+      }
+   },
+   "79":{
+      "implementation":{
+         "implementationDescrition":[
+            "HWDS is implemented as a ",
+            " ",
+            ". All access points to the service are wholly contained within ",
+            ". Hence, the data, transport, and ",
+            " protocols as well as the network address detailed below are applicable to NEMS only."
+         ],
+         "implementationName":[
+            "HWDS"
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Weather"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Flight Planning, Airport, Arrival and Departure, En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Publish/Subscribe"
+         ],
+         "lifeCicleStage":[
+            "Proposed"
+         ],
+         "serviceVersion":[
+            "2.0"
+         ],
+         "serviceName":[
+            "WARP Vendor Weather Data Publication"
+         ],
+         "interfaceType":[
+            "Message-Oriented"
+         ],
+         "serviceDescription":[
+            "Harris Weather Data Service (HWDS) provides real-time weather information to end users.",
+            "The WARP system is a computer-based interactive, meteorological data processing system that simultaneously and continuously receives, processes, stores, distributes, and displays aviation-related weather information and radar product.\u00a0 WARP operational systems are deployed at two National Weather sites located at ZTL and ZLC ARTCCs, four Regional Sites (ZSE, ZFW, ZAU, and ZDC ARTCCs), 22 En Route sites (Conterminous United States (CONUS) ARTCCs, the Alaska ARTCC (ZAN), and the ATCSCC (CC0) in Warrenton, VA), three Central Radar Approaches (CERAPs) (ZHN, ZSU and ZUA) and three TRACONs (IND, D10, and DEN).\u00a0 Non-operational systems are provided at the FAA Technical Center and Harris facility in Melbourne, FL."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "HWDS accessibility utilizes the ",
+            " for access control to verify the identity of the users, to grant the rights and permissions to access system resources, content services, and other processes by which access to system resources is regulated according to a ",
+            " policy. That is, this ",
+            " employs the ",
+            " ",
+            ".\u00a0 All the security mechanisms are provided by NEMS and are described in the NEMS Asynchronous Messaging Interface Control Document (ICD).",
+            "HWDS is deployed in the \u201cuntrusted\u201d region of the NAS Enterprise Security Gateway (NESG).\u00a0 NEMS enables connectivity from the \u201cuntrusted\u201d region to the NAS."
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Harris Commerical Weather"
+         ]
+      }
+   },
+   "80":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Weather"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Flight Planning, Arrival and Departure, En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Point-to-Point"
+         ],
+         "lifeCicleStage":[
+            "Verification"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "WMSCR Report Retrieval (WMSCR)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "WMSCR Report Retrieval Service gives a service consumer the capability to receive, upon request, the reports from WMSCR system.\u00a0 A consumer will request a list of PIREPs or Altimeter Setting reports that conform to certain parameter settings. WMSCR\u00a0 will return a list of PIREPs or\u00a0 Altimeter \u00a0Setting reports,\u00a0 that conform to the parameter setting, to the consumer."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "WMSCR RRS delegates all security measures to the NEMS. See NEMS ICD for description of security service"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Weather Mesage Switching Center Replacement"
+         ]
+      }
+   },
+   "81":{
+      "implementation":{
+         "implementationDescrition":[
+
+         ],
+         "implementationName":[
+
+         ]
+      },
+      "header":{
+         "serviceCategory":[
+            "Weather"
+         ],
+         "serviceCriticalLevel":[
+            "Essential"
+         ],
+         "atmServiceCategory":[
+            "Flight Planning, Arrival and Departure, En Route Cruise/Oceanic"
+         ],
+         "messagingMode":[
+            "Point-to-Point"
+         ],
+         "lifeCicleStage":[
+            "Verification"
+         ],
+         "serviceVersion":[
+            "1.0"
+         ],
+         "serviceName":[
+            "WMSCR Report Retrieval (WMSCR)"
+         ],
+         "interfaceType":[
+            "Method-Oriented"
+         ],
+         "serviceDescription":[
+            "WMSCR Report Retrieval Service gives a service consumer the capability to receive, upon request, the reports from WMSCR system.\u00a0 A consumer will request a list of PIREPs or Altimeter Setting reports that conform to certain parameter settings. WMSCR\u00a0 will return a list of PIREPs or\u00a0 Altimeter \u00a0Setting reports,\u00a0 that conform to the parameter setting, to the consumer."
+         ]
+      },
+      "security":{
+         "securityDescription":[
+            "WMSCR RRS delegates all security measures to the NEMS. See NEMS ICD for description of security service"
+         ]
+      },
+      "provider":{
+         "serviceProviderName":[
+            "Weather Mesage Switching Center Replacement"
+         ]
+      }
+   }
+}
