@@ -16,7 +16,7 @@ public class ManufacturerModel {
 	
 	private String name;
 	
-	@OneToMany(mappedBy="aircraft")
+	@OneToMany
 	private List<AircraftModel>aircrafts;
 
 	public int getId() {

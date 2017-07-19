@@ -3,18 +3,27 @@ package org.ws.data.mok;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import org.ws.model.*;
 
 
 
-
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD ) // para pegar o nome em @XmlElement
 public class GetDataMok {
+	
 	
 	private String airportNames[] = {"A","B","C"};
 	private String companyNames[]= {"CA","CB","CC"};
 	private String manufacturerNames[]= {"MA","MB","MC"};
 	private String icaoNumber[]= {"I1","I2","I3","I4","I5"};
 	
+	
+	public GetDataMok() {}
 	
 	public String[] getAirportNames() {
 		return airportNames;
@@ -91,6 +100,8 @@ public class GetDataMok {
 		return model;
 	}
 	
+	
+	@XmlElement(name = "aircraft")
 	public List<AircraftModel>getListAircraftModel(int quant){
 		
 		List<AircraftModel>aircrafts = new ArrayList<AircraftModel>();

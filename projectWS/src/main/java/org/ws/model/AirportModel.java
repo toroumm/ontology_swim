@@ -15,10 +15,10 @@ public class AirportModel {
 	private int id;
 	private String name;
 	
-	@OneToMany(mappedBy = "aircraft")
+	@OneToMany
 	private List<AircraftModel>aircraftsOut;
 	
-	@OneToMany(mappedBy = "aircraft")
+	@OneToMany
 	private List<AircraftModel>aircraftsIn;
 
 	public int getId() {

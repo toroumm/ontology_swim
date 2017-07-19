@@ -15,7 +15,7 @@ import org.ws.model.AircraftModel;
 public class AircraftDao {
 
 	@PersistenceContext
-	private EntityManager manager;
+	EntityManager manager;
 
 	private String className = "AircraftModel";
 

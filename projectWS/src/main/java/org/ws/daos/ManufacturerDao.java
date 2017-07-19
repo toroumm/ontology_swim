@@ -16,7 +16,7 @@ public class ManufacturerDao {
 
 	
 	@PersistenceContext
-	private EntityManager manager;
+	EntityManager manager;
 	
 	private String className = "ManufacturerModel";
 	

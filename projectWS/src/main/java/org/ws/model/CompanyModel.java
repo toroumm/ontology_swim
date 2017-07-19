@@ -18,7 +18,7 @@ public class CompanyModel {
 	private int id;
 	private String name;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "aircraft")
+	@OneToMany(cascade = CascadeType.ALL)
 	List<AircraftModel>listAircraft;
 
 	public int getId() {
