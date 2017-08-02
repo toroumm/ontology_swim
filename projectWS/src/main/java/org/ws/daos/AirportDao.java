@@ -21,22 +21,18 @@ public class AirportDao {
 	
 	
 	private List<AirportModel> executeQuery(String query){
-		
 		try {
 			return manager.createQuery(query,AirportModel.class).getResultList();
 		} catch (Exception e) {
 			return Collections.<AirportModel>emptyList();
 		}
-		
 	}
 	
 	public List<AirportModel> getAll(){
-		
 		return executeQuery("select x from  "+className+" x");
 	}
 	
 	public List<AirportModel>getFilterOneParameter(String columnName, String parameter){
-		
 		return executeQuery("select x from "+className+" x where x."+columnName+"  =  '"+parameter+"'");
 	}
 	

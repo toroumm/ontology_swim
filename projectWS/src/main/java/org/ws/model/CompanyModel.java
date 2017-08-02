@@ -8,17 +8,22 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.xml.bind.annotation.XmlElement;
 
 
 
 @Entity
 public class CompanyModel {
-
+	
+	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	
+	@XmlElement(required=false)
 	private String name;
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	@XmlElement(required=false)
+	@OneToMany(cascade = CascadeType.ALL,mappedBy="company")
 	List<AircraftModel>listAircraft;
 
 	public int getId() {

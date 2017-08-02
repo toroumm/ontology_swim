@@ -2,23 +2,27 @@ package org.ws.model;
 
 import java.util.List;
 
-import javax.persistence.Entity;
+import javax.persistence.CascadeType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
+import javax.xml.bind.annotation.XmlElement;
 
-@Entity
 public class AirportModel {
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	
+	@XmlElement(required=false)
 	private String name;
 	
-	@OneToMany
+	@XmlElement(required=false)
+	@ManyToMany(cascade=CascadeType.ALL, mappedBy="fromTo")
 	private List<AircraftModel>aircraftsOut;
 	
-	@OneToMany
+	@XmlElement(required=false)
+	@ManyToMany(cascade=CascadeType.ALL,mappedBy="goingTo")
 	private List<AircraftModel>aircraftsIn;
 
 	public int getId() {

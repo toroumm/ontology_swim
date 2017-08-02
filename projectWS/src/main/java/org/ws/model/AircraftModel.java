@@ -1,34 +1,47 @@
 package org.ws.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 
-@Table(name ="aircraft")
+@XmlAccessorType(XmlAccessType.FIELD)
 @Entity
 public class AircraftModel {
 
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	
+	@XmlElement(required=false)
 	private String model;
+	
+	@XmlElement(required=false)
 	private String icao;
+	
+	@XmlElement(required=false)
 	private float speed;
 	
-	@ManyToOne
+	@XmlElement(required=false)
+	@ManyToOne(cascade=CascadeType.ALL)
 	private CompanyModel company;
 	
-	@ManyToOne
+	@XmlElement(required=false)
+	@ManyToOne(cascade= CascadeType.ALL)
 	private ManufacturerModel manufacturer;
 	
-	@OneToOne
+	@XmlElement(required=false)
+	@ManyToMany(cascade= CascadeType.ALL)
 	private AirportModel goingTo;
-	
-	@OneToOne
-	private AirportModel fromto;
+
+	@XmlElement(required=false)
+	@ManyToMany(cascade= CascadeType.ALL)
+	private AirportModel fromTo;
 	
 	public CompanyModel getCompany() {
 		return company;
@@ -43,10 +56,10 @@ public class AircraftModel {
 		this.goingTo = goingTo;
 	}
 	public AirportModel getFromto() {
-		return fromto;
+		return fromTo;
 	}
 	public void setFromto(AirportModel fromto) {
-		this.fromto = fromto;
+		this.fromTo = fromto;
 	}
 	public ManufacturerModel getManufacturer() {
 		return manufacturer;

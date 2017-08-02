@@ -26,7 +26,6 @@ public class CompanyDao {
 		} catch (Exception e) {
 			return Collections.<CompanyModel>emptyList();
 		}
-
 	}
 
 	public List<CompanyModel> getAll(){

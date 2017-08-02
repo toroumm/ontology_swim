@@ -28,6 +28,7 @@ public class HomeController {
 		//Endpoint.publish(urlData, aircraftWS);
 		
 		e.publish(urlData);
+		
 		return "home";
 	}
 }

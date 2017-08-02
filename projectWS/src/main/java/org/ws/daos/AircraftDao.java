@@ -19,7 +19,8 @@ public class AircraftDao {
 
 	private String className = "AircraftModel";
 
-
+	
+	
 	private List<AircraftModel> executeQuery(String query){
 
 		try {
