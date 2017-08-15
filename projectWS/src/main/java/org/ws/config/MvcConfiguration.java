@@ -10,7 +10,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 
 @EnableWebMvc
-@ComponentScan(basePackages = "org.ws")
+@ComponentScan(basePackages = {"org.ws.controller","org.ws.daos"})
 public class MvcConfiguration extends WebMvcConfigurerAdapter{
 
 	@Bean

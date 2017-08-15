@@ -18,6 +18,8 @@ public class JPAConfiguration {
 	
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+		
+		
 		LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 
